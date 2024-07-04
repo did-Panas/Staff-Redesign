@@ -1,0 +1,124 @@
+.our-services {
+	// .our-services__container
+	&__container {
+	}
+
+	// .our-services__wrapper
+	&__wrapper {
+		max-width: toRem(1075);
+		margin: 0 auto;
+	}
+
+	// .our-services__title
+	&__title {
+		margin-bottom: toRem(32);
+
+		text-align: center;
+
+		& p {
+			margin-bottom: toRem(8);
+		}
+	}
+
+	// .our-services__body
+	&__body {
+		margin-bottom: toRem(65);
+		padding: toRem(60) toRem(60) toRem(67);
+
+		border-radius: toRem(11);
+		background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 80.494%);
+	}
+
+	// .our-services__item
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: toRem(55);
+		}
+	}
+
+	// .our-services__item .serv-list
+	& .serv-list {
+		&:first-child {
+			&::before {
+				content: "";
+				position: absolute;
+				width: toRem(1095);
+				height: toRem(1028);
+				top: -35%;
+				right: -32%;
+				background-image: url("@img/services/glare-first-right.svg");
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: toRem(1095);
+				height: toRem(1028);
+				bottom: -25%;
+				left: -32%;
+				background-image: url("@img/services/glare-first-left.svg");
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&:last-child {
+			&::before {
+				content: "";
+				position: absolute;
+				width: toRem(1095);
+				height: toRem(1028);
+				top: -20%;
+				right: -32%;
+				background-image: url("@img/services/glare-last-right.svg");
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: toRem(1095);
+				height: toRem(1028);
+				bottom: -38%;
+				left: -32%;
+				background-image: url("@img/services/glare-last-left.svg");
+				background-position: center center; /* x y */
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	// .our-services__item .serv-list__list
+	& .serv-list__list {
+		grid-template-columns: repeat(2, minmax(auto, 386px));
+		grid-column-gap: toRem(30);
+		justify-content: space-between;
+	}
+
+	// .our-services__btn-block
+	&__btn-block {
+		display: flex;
+		gap: toRem(34);
+		justify-content: center;
+		align-items: center;
+
+		& h3 {
+			font-family: "Proxima Nova", sans-serif;
+			font-size: toRem(24);
+			font-weight: 900;
+			line-height: 121%;
+			text-transform: uppercase;
+		}
+
+		& button {
+			position: relative;
+		}
+	}
+}
