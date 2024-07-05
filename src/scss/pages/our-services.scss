@@ -7,11 +7,16 @@
 	&__wrapper {
 		max-width: toRem(1075);
 		margin: 0 auto;
+
+		@media (max-width: $tablet) {
+			margin: 0 toRem(-15);
+		}
 	}
 
 	// .our-services__title
 	&__title {
 		margin-bottom: toRem(32);
+		margin: toRem(0) toRem(15) toRem(32);
 
 		text-align: center;
 	}
@@ -19,10 +24,15 @@
 	// .our-services__body
 	&__body {
 		margin-bottom: toRem(65);
-		padding: toRem(60) toRem(60) toRem(67);
 
-		border-radius: toRem(11);
+		padding: toRem(45) toRem(15) toRem(52);
+
 		background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 80.494%);
+
+		@media (min-width: $tablet) {
+			padding: toRem(60) toRem(60) toRem(67);
+			border-radius: toRem(11);
+		}
 	}
 
 	// .our-services__item
@@ -68,8 +78,8 @@
 				position: absolute;
 				width: toRem(1095);
 				height: toRem(1028);
-				top: -20%;
-				right: -32%;
+				top: toRem(-160);
+				right: toRem(-290);
 				background-image: url("@img/services/glare-last-right.svg");
 				background-position: center center; /* x y */
 				background-size: cover;
@@ -81,8 +91,8 @@
 				position: absolute;
 				width: toRem(1095);
 				height: toRem(1028);
-				bottom: -38%;
-				left: -32%;
+				bottom: toRem(-260);
+				left: toRem(-300);
 				background-image: url("@img/services/glare-last-left.svg");
 				background-position: center center; /* x y */
 				background-size: cover;
@@ -94,8 +104,12 @@
 	// .our-services__item .serv-list__list
 	& .serv-list__list {
 		grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-		grid-column-gap: toRem(30);
+		grid-column-gap: toRem(49);
 		justify-content: space-between;
+
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	// .our-services__btn-block
