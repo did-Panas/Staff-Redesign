@@ -156,16 +156,22 @@ body {
 @import "header";
 @import "footer";
 @import "blocks/advantages";
+@import "blocks/home-services";
 // === SERVICES-PAGE ==================================
-@import "pages/our-services.scss";
+@import "pages/our-services";
 // Підключення стилів окремих сторінок
 @import "home";
 
 // ==================== PAGE ===========================
 
 .page {
+	// === HOME - PAGE ===========================
 	// .page__advantages
 	&__advantages {
+	}
+	// .page__services
+	&__services {
+		padding: toRem(101) toRem(0) toRem(138);
 	}
 	// === SERVICES - PAGE ===========================
 	// .page__our-services

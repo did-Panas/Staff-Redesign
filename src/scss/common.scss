@@ -22,15 +22,33 @@
 	}
 
 	&--h2 {
-		font-size: toRem(36);
+		@include adaptiveValue("font-size", 36, 20, 0, 1200, 320);
 		line-height: 121%;
 
+		@media (max-width: em(1200)) {
+			font-weight: 800;
+		}
+
+		@media (max-width: $tablet) {
+			font-weight: 700;
+		}
+
 		& p {
+			@include adaptiveValue("margin-bottom", 8, 4, 0, 1200, 320);
+
 			color: $neutral-grey-1;
 
-			font-size: toRem(18);
+			@include adaptiveValue("font-size", 18, 14, 0, 1200, 320);
 			font-weight: 800;
 			line-height: 129.52%;
+
+			@media (max-width: em(1200)) {
+				font-weight: 700;
+			}
+
+			@media (max-width: $tablet) {
+				font-weight: 500;
+			}
 		}
 	}
 }
@@ -63,6 +81,9 @@
 
 	// .serv-list__title
 	&__title {
+		position: relative;
+		z-index: 5;
+
 		margin-bottom: toRem(56);
 
 		text-align: center;
@@ -75,7 +96,7 @@
 	// .serv-list__list
 	&__list {
 		position: relative;
-		z-index: 5;
+		z-index: 3;
 
 		display: grid;
 		grid-row-gap: toRem(5);
@@ -130,7 +151,31 @@
 				& svg {
 					fill: $accentColor;
 				}
+
+				& .serv-list_more p {
+					text-decoration: underline;
+				}
 			}
+		}
+	}
+
+	// .serv-list_more
+	&_more {
+		display: flex;
+		align-items: center;
+		gap: toRem(5);
+
+		& p {
+			color: $accentColor;
+		}
+
+		& span {
+			color: $neutral-white-1;
+
+			font-size: toRem(12);
+			font-weight: 700;
+
+			transition: color 0.3s ease 0s;
 		}
 	}
 }
