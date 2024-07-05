@@ -40,6 +40,7 @@
 		padding: toRem(16) toRem(54);
 
 		font-size: toRem(24);
+		@include adaptiveValue("font-size", 24, 17, 0, 1200, 768);
 		font-weight: 500;
 		line-height: 142.52%;
 	}

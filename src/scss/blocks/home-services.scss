@@ -27,20 +27,26 @@
 	&__subtitle {
 		color: $neutral-white-1;
 
-		font-size: toRem(16);
+		@include adaptiveValue("font-size", 16, 13, 0, 1200, 380);
 		font-weight: 500;
 		line-height: 150%; /* 24/16 */
+
+		@media (max-width: $tablet) {
+			font-weight: 400;
+		}
 	}
 
 	// .services__body
 	&__body {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		gap: toRem(40);
 	}
 
 	// .services__item
 	&__item {
+		flex: 0 1 toRem(520);
 	}
 
 	// services__item .serv-list
@@ -51,8 +57,8 @@
 				position: absolute;
 				width: toRem(1095);
 				height: toRem(1028);
-				top: -58%;
-				left: -42%;
+				top: toRem(-340);
+				left: toRem(-180);
 				background-image: url("@img/home/services/glare-right.svg");
 				background-position: center center; /* x y */
 				background-size: cover;
@@ -66,8 +72,8 @@
 				position: absolute;
 				width: toRem(1095);
 				height: toRem(1028);
-				bottom: -28%;
-				right: -78%;
+				bottom: toRem(-155);
+				right: toRem(-380);
 				background-image: url("@img/home/services/glare-left.svg");
 				background-position: center center; /* x y */
 				background-size: cover;
