@@ -6,6 +6,7 @@
 	// .advantages__list
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		gap: toRem(28);
 	}
@@ -14,8 +15,7 @@
 	&__item {
 		position: relative;
 
-		flex: 0 1 toRem(247);
-
+		flex: 0 0 toRem(252);
 		padding: toRem(37) toRem(27) toRem(41);
 
 		border-radius: toRem(8);
@@ -25,6 +25,10 @@
 		font-weight: 900;
 
 		transition: all 0.9s ease 0s;
+
+		@media (max-width: $tablet) {
+			padding: toRem(25) toRem(27) toRem(30);
+		}
 
 		&::before {
 			content: "";
@@ -63,6 +67,24 @@
 				}
 			}
 		}
+
+		// @media (max-width: $tablet) {
+		// 	&::before {
+		// 		opacity: 1;
+		// 	}
+
+		// 	& .advantages__subtitle {
+		// 		color: $neutral-white-1;
+		// 	}
+
+		// 	& .advantages__txt {
+		// 		color: $neutral-grey-4;
+		// 	}
+		// }
+
+		@media (max-width: $tablet) {
+			border: 1px solid $mainColor;
+		}
 	}
 
 	// .advantages__num
@@ -72,17 +94,20 @@
 		color: $accentColor;
 
 		font-family: "Proxima Nova", sans-serif;
-		font-size: toRem(43);
-
+		@include adaptiveValue("font-size", 43, 30, 0, 991, 479);
 		line-height: 121%;
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(12);
+		}
 	}
 
 	// .advantages__subtitle
 	&__subtitle {
-		margin-bottom: toRem(9);
+		@include adaptiveValue("margin-bottom", 9, 5, 0, 991, 479);
 
 		font-family: "Proxima Nova", sans-serif;
-		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 17, 0, 991, 479);
 		line-height: 121%;
 		text-transform: uppercase;
 
@@ -100,7 +125,7 @@
 	&__txt {
 		color: $neutral-grey-2;
 
-		font-size: toRem(16);
+		@include adaptiveValue("font-size", 16, 14, 0, 991, 479);
 		font-weight: 500;
 		line-height: 143.75%; /* 23/16 */
 
