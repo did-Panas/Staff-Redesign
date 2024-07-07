@@ -26,10 +26,15 @@ $mainColor: #30325b; // Колір шрифту за замовчуванням
 $accentColor: #ff5a57;
 $neutral-white-1: #fff;
 $neutral-white-2: #f9f9f9;
+$neutral-white-3: #f4efff;
+$neutral-white-4: #ededed;
 $neutral-grey-1: #b0b0b0;
 $neutral-grey-2: #8c8d94;
 $neutral-grey-3: #777;
 $neutral-grey-4: #cfd0e7;
+$neutral-grey-5: #d9d9d9;
+$neutral-grey-6: #9f9f9f;
+$contrast-1: #16004d;
 
 // Палітра кольорів
 // @import "base/colors-palette";
@@ -157,6 +162,7 @@ body {
 @import "footer";
 @import "blocks/advantages";
 @import "blocks/home-services";
+@import "blocks/form-block";
 // === SERVICES-PAGE ==================================
 @import "pages/our-services";
 // Підключення стилів окремих сторінок
@@ -175,6 +181,18 @@ body {
 
 		@media (max-width: $tablet) {
 			padding: toRem(70) toRem(0) toRem(80);
+		}
+	}
+	// .page__form
+	&__form {
+		padding: toRem(124) toRem(0) toRem(147);
+
+		@media (max-width: em(999)) {
+			padding: toRem(80) toRem(0) toRem(90);
+		}
+
+		@media (max-width: em(550)) {
+			padding: toRem(60) toRem(0) toRem(70);
 		}
 	}
 	// === SERVICES - PAGE ===========================

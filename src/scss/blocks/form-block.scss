@@ -1,0 +1,249 @@
+.form-block {
+	background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 83.034%);
+	// .form-block__container
+	&__container {
+	}
+
+	// .form-block__body
+	&__body {
+		max-width: toRem(1090);
+
+		display: grid;
+		gap: toRem(70);
+		justify-content: center;
+
+		@media (min-width: em(1000)) {
+			grid-template-columns: auto 438px;
+			gap: toRem(50);
+			justify-content: space-between;
+		}
+	}
+
+	// .form-block__info
+	&__info {
+		color: $neutral-white-1;
+
+		@media (max-width: em(999)) {
+			text-align: center;
+		}
+	}
+
+	// .form-block__title
+	&__title {
+		margin-bottom: toRem(8);
+	}
+
+	// .form-block__txt
+	&__txt {
+		max-width: toRem(483);
+		margin-bottom: toRem(27);
+
+		@include adaptiveValue("font-size", 16, 14, 0, 991, 380);
+		line-height: 150%; /* 24/16 */
+
+		@media (max-width: em(999)) {
+			margin: 0 auto toRem(50);
+		}
+
+		@media (min-width: $tablet) {
+			font-weight: 500;
+		}
+
+		& p {
+			&:not(:last-child) {
+				margin-bottom: toRem(22);
+			}
+		}
+	}
+
+	// .form-block__contacts
+	&__contacts {
+		display: flex;
+		gap: toRem(15);
+
+		@media (max-width: em(999)) {
+			justify-content: space-between;
+		}
+
+		@media (max-width: $mobileSmall) {
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: toRem(30);
+		}
+	}
+
+	// .form-block__cont-item
+	&__cont-item {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(5);
+
+		padding: toRem(17) toRem(29);
+
+		border: 1px solid $neutral-grey-5;
+		border-radius: toRem(8);
+
+		transition:
+			background-color 0.3s ease 0s,
+			color 0.3s ease 0s;
+
+		@media (max-width: em(550)) {
+			padding: toRem(14) toRem(22);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(176, 176, 176, 0.321);
+				background-color: rgba(255, 90, 87, 0.35);
+
+				& h4 {
+					color: $neutral-grey-1;
+				}
+
+				& > p {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		& h4 {
+			display: flex;
+			align-items: center;
+			gap: toRem(8);
+
+			color: $accentColor;
+
+			font-family: "Inter", sans-serif;
+			@include adaptiveValue("font-size", 15, 13, 0, 991, 550);
+			font-weight: 700;
+			line-height: 120%; /* 18/15 */
+		}
+
+		& span {
+			padding: toRem(2) toRem(4);
+
+			background-color: $neutral-white-3;
+			border-radius: toRem(3);
+			color: $contrast-1;
+
+			font-family: "Inter", sans-serif;
+			@include adaptiveValue("font-size", 11, 9, 0, 991, 550);
+			font-weight: 500;
+			line-height: 118.181818%; /* 13/11 */
+
+			@media (max-width: em(550)) {
+				padding: toRem(1) toRem(3);
+			}
+		}
+
+		& > p {
+			font-family: "Proxima Nova", sans-serif;
+			@include adaptiveValue("font-size", 20, 18, 0, 991, 550);
+			font-weight: 900;
+			line-height: 121%;
+
+			@media (max-width: $tablet) {
+				font-weight: 700;
+			}
+		}
+	}
+
+	// .form-block__form
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr auto 1fr;
+		grid-column-gap: toRem(9);
+		grid-row-gap: toRem(18);
+
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: 1fr;
+		}
+
+		& .select__content,
+		& input::placeholder,
+		& textarea::placeholder {
+			color: $neutral-grey-6;
+
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 171.428571%; /* 24/14 */
+		}
+
+		& input,
+		& .select__title {
+			height: toRem(56);
+			width: 100%;
+		}
+
+		& textarea,
+		& .form-block__submit {
+			grid-column: 1 / -1;
+		}
+
+		& input,
+		& .select__title,
+		& textarea {
+			background-color: $neutral-white-4;
+			border-radius: toRem(3);
+			color: $neutral-grey-3;
+
+			font-size: toRem(15);
+			font-weight: 500;
+		}
+
+		& input {
+			padding: toRem(0) toRem(19);
+		}
+
+		& textarea {
+			width: 100%;
+			height: toRem(137);
+			padding: toRem(15) toRem(19);
+			resize: none;
+		}
+
+		& .select__option {
+			font-size: toRem(17);
+
+			@media (max-width: $tablet) {
+				padding: toRem(8) toRem(15);
+			}
+		}
+	}
+
+	// .form-block__submit
+	&__submit {
+	}
+}
+
+.form-block {
+	// .form-block__form
+
+	&__form {
+	}
+
+	// .form-block__submit
+
+	&__submit {
+	}
+}
+.form {
+	// .form__item
+	&__item {
+		position: relative;
+	}
+
+	& .form__error {
+		position: absolute;
+		top: 0;
+
+		padding: toRem(3) toRem(7);
+
+		background-color: rgba(255, 90, 87, 0.7);
+		color: $neutral-white-4;
+		border-radius: toRem(3);
+
+		font-size: toRem(12);
+	}
+}

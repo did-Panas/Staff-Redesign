@@ -31,7 +31,7 @@
 	&--md {
 		padding: toRem(12) toRem(20);
 
-		font-size: toRem(18);
+		@include adaptiveValue("font-size", 18, 17, 0, 991, 550);
 		font-weight: 500;
 		line-height: 142.52%;
 	}
@@ -46,6 +46,9 @@
 	}
 
 	&--fw {
+		justify-content: center;
+		align-items: center;
+
 		width: 100%;
 	}
 }

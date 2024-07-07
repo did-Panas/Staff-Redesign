@@ -85,25 +85,40 @@ export let formValidate = {
 	},
 	validateInput(formRequiredItem) {
 		let error = 0;
-		if ("email" === formRequiredItem.dataset.required) {
+		if (formRequiredItem.dataset.required === "email") {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
-			if (this.emailTest(formRequiredItem)) {
+			if ((this.emailTest(formRequiredItem)) && (formRequiredItem.value !== "")) {
 				this.addError(formRequiredItem);
 				error++;
-			} else this.removeError(formRequiredItem);
-		} else if ("uaphone" === formRequiredItem.dataset.required) {
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		}
+		else if (formRequiredItem.dataset.required === "uaphone") {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
-			if (this.phoneTest(formRequiredItem)) {
+			if ((this.phoneTest(formRequiredItem)) && (formRequiredItem.value !== "")) {
 				this.addError(formRequiredItem);
 				error++;
-			} else this.removeError(formRequiredItem);
-		} else if ("checkbox" === formRequiredItem.type && !formRequiredItem.checked) {
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		}
+		else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
-		} else if (!formRequiredItem.value.trim()) {
+		}
+		else if (formRequiredItem.tagName === "SELECT" && Number(formRequiredItem.value) == 1) {
 			this.addError(formRequiredItem);
 			error++;
-		} else this.removeError(formRequiredItem);
+		}
+		else {
+			if (!formRequiredItem.value.trim()) {
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		}
 		return error;
 	},
 	addError(formRequiredItem) {
