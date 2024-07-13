@@ -24,6 +24,8 @@
 	}
 
 	&--outline {
+		padding: toRem(12) toRem(18);
+
 		color: $accentColor;
 		background-color: $neutral-white-1;
 	}

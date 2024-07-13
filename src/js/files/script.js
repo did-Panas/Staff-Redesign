@@ -63,4 +63,55 @@ import { flsModules } from "./modules.js";
 // ==========================
 
 // ============ >>>>>>>BLOCKING SUBMIT-BTN with empty input (before validating) =====
-// ==================================================================================
+
+// =================== + ПЕРЕВІРКА НА ВИБРАНИЙ SELECT (ВСТАВИТИ УМОВУ В КОД ВАЛІДАЦІЇ)
+
+// else if (formRequiredItem.tagName === "SELECT" && Number(formRequiredItem.value) == 1) {
+// 	this.addError(formRequiredItem);
+// 	error++;
+// }
+
+// =============>>>>>> + ПЕРЕВІРКА НА ВИБРАНИЙ SELECT (ВСТАВИТИ УМОВУ В КОД ВАЛІДАЦІЇ)
+
+// ===== DROPDOWN MENU ==============================================================
+
+let body = document.querySelector('body');
+if (isMobile.any()) {
+	body.classList.add('touch');
+	let arrow = document.querySelectorAll('.arrow');
+	for (let i = 0; i < arrow.length; i++) {
+		let thisLink = arrow[i].previousElementSibling;
+		let subMenu = arrow[i].nextElementSibling;
+		let thisArrow = arrow[i];
+
+		thisLink.classList.add('parent');
+		arrow[i].addEventListener('click', function () {
+			subMenu.classList.toggle('open');
+			thisArrow.classList.toggle('active');
+		});
+
+
+		// Клик снаружи дропдауна. Закрыть дропдаун
+		document.addEventListener('click', function (e) {
+			if (!e.target.closest('.menu')) {
+				subMenu.classList.remove('open');
+				thisArrow.classList.remove('active');
+			}
+		});
+
+		// Нажатие на Tab или Escape. Закрыть дропдаун
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Tab' || e.key === 'Escape') {
+				subMenu.classList.remove('open');
+				thisArrow.classList.remove('active');
+			}
+		});
+
+
+
+	}
+} else {
+	body.classList.add('mouse');
+}
+
+// =============================================== >>>>>>>>>>> DROPDOWN MENU =========
