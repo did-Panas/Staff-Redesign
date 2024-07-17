@@ -85,7 +85,7 @@ if (isMobile.any()) {
 		let thisArrow = arrow[i];
 
 		thisLink.classList.add('parent');
-		arrow[i].addEventListener('click', function () {
+		arrow[i].previousElementSibling.addEventListener('click', function () {
 			subMenu.classList.toggle('open');
 			thisArrow.classList.toggle('active');
 		});
@@ -93,7 +93,7 @@ if (isMobile.any()) {
 
 		// Клик снаружи дропдауна. Закрыть дропдаун
 		document.addEventListener('click', function (e) {
-			if (!e.target.closest('.menu')) {
+			if (e.target.classList.contains("menu__body")) {
 				subMenu.classList.remove('open');
 				thisArrow.classList.remove('active');
 			}
