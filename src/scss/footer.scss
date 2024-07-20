@@ -1,24 +1,65 @@
 //====================================================================================================
 
 .footer {
+	padding-top: toRem(60);
+
+	color: $contrast-1;
+
 	// .footer__container
 	&__container {
+		max-width: toRem(1176);
 	}
 
 	// .footer__row
 	&__row {
+		&:nth-child(2) {
+			display: flex;
+			justify-content: space-between;
+			gap: toRem(111);
+			@include adaptiveValue("gap", 111, 60, 0, 1440, 991.98);
+
+			margin-bottom: toRem(58);
+		}
+
+		&:last-child {
+			display: flex;
+			justify-content: space-between;
+			gap: toRem(50);
+
+			margin-bottom: toRem(45);
+
+			font-size: toRem(12);
+			font-weight: 500;
+			line-height: 150%; /* 18/12 */
+		}
 	}
 
 	// .footer__logo
+
 	&__logo {
+		margin-bottom: toRem(39);
+
+		text-align: center;
+
+		& img {
+			height: toRem(60);
+		}
 	}
 
 	// .footer__menu
 	&__menu {
+		flex: 1 1 auto;
+
+		display: flex;
+		gap: toRem(30);
+		justify-content: space-between;
 	}
 
 	// .footer__info-panel
 	&__info-panel {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(20);
 	}
 
 	// .footer__socials
@@ -40,6 +81,12 @@
 
 //====================================================================================================
 
+.title-footer {
+	font-family: "Proxima Nova", sans-serif;
+	font-weight: 700;
+	line-height: 116.666667%; /* 21/18 */
+}
+
 .menu-footer {
 	// .menu-footer__item
 	&__item {
@@ -47,16 +94,54 @@
 
 	// .menu-footer__item-title
 	&__item-title {
+		margin-bottom: toRem(25);
+
+		list-style: none;
 	}
 
+	// .menu-footer__arrow
+	&__arrow {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+	}
 	// .menu-footer__item-list
 	&__item-list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(14);
 	}
 
 	// .menu-footer__link
 	&__link {
+		font-size: toRem(15);
+		font-weight: 500;
+		line-height: 153.333333%; /* 23/15 */
+
+		& > a {
+			color: $neutral-grey-7;
+
+			transition: color 0.3s ease 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $accentColor;
+				}
+			}
+		}
+
 		// .menu-footer__link_num
 		&_num {
+			& span {
+				padding: toRem(5);
+				margin-left: toRem(10);
+
+				background-color: $neutral-white-3;
+				border-radius: toRem(4);
+
+				font-size: toRem(14);
+				line-height: 150%; /* 21/14 */
+			}
 		}
 	}
 }
@@ -64,38 +149,83 @@
 .socials {
 	// .socials__item-title
 	&__item-title {
+		margin-bottom: toRem(15);
 	}
 
 	// .socials__list
 	&__list {
+		display: flex;
+		gap: toRem(9);
 	}
 
 	// .socials__item
 	&__item {
+		& svg {
+			width: toRem(23);
+			height: toRem(23);
+
+			fill: $contrast-3;
+
+			transition: fill 0.3s ease 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					fill: $accentColor;
+				}
+			}
+		}
 	}
 }
 
 .awards {
 	// .awards__item-title
 	&__item-title {
+		margin-bottom: toRem(18);
 	}
 
 	// .awards__list
 	&__list {
+		display: flex;
+		gap: toRem(17);
+		align-items: center;
 	}
 
 	// .awards__item
 	&__item {
+		height: toRem(40);
+	}
+
+	// .awards__link
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 100%;
+
+		& img {
+			max-height: 100%;
+			width: auto;
+		}
 	}
 }
 
 .bottom-panel {
 	// .bottom-panel__list
 	&__list {
+		display: flex;
+		gap: toRem(27);
 	}
 
 	// .bottom-panel__item
 	&__item {
+		@media (any-hover: hover) {
+			&:hover {
+				& > a {
+					text-decoration: underline;
+				}
+			}
+		}
 		// .bottom-panel__item_lang
 		&_lang {
 		}
@@ -105,21 +235,63 @@
 .lang {
 	// .lang__body
 	&__body {
+		position: relative;
 	}
 
 	// .lang__title
 	&__title {
+		position: relative;
+
+		padding-right: toRem(12);
+
+		list-style: none;
+		cursor: pointer;
+
+		&._spoller-active {
+			& .lang__arrow {
+				transform: rotate(180deg);
+			}
+		}
 	}
 
 	// .lang__arrow
 	&__arrow {
+		position: absolute;
+		top: toRem(6);
+		right: 0;
+
+		width: toRem(7);
+		height: toRem(4);
+
+		fill: $contrast-1;
+
+		transition: transform 0.3s ease 0s;
 	}
 
 	// .lang__list
 	&__list {
+		position: absolute;
+
+		padding: 0 toRem(5);
+
+		background-color: rgba(140, 141, 148, 0.256);
+		border-radius: toRem(5);
 	}
 
 	// .lang__item
 	&__item {
+		font-size: toRem(10);
+
+		& > a {
+			transition: color 0.3s ease 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				& > a {
+					color: $accentColor;
+				}
+			}
+		}
 	}
 }
