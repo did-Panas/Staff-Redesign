@@ -7,6 +7,7 @@
 
 	color: $neutral-white-1;
 	background-color: $accentColor;
+	border: 1px solid $accentColor;
 	border-radius: toRem(6);
 
 	font-size: toRem(14);
@@ -18,17 +19,9 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			color: $accentColor;
+			color: $neutral-grey-3;
 			background-color: rgba(255, 90, 87, 0.1);
-			outline: 1px solid $accentColor;
 		}
-	}
-
-	&--outline {
-		padding: toRem(12) toRem(18);
-
-		color: $accentColor;
-		background-color: $neutral-white-1;
 	}
 
 	&--md {
@@ -46,6 +39,22 @@
 		@include adaptiveValue("font-size", 24, 17, 0, 1200, 768);
 		font-weight: 500;
 		line-height: 142.52%;
+	}
+
+	&--outline {
+		//padding: toRem(14) toRem(54);
+
+		color: $accentColor;
+		background-color: $neutral-white-1;
+
+		transition: all 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $accentColor;
+				// color: $neutral-white-1;
+			}
+		}
 	}
 
 	&--fw {

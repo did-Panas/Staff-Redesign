@@ -1,3 +1,67 @@
-//====================================================================================================
+.hero {
+	// .hero__container
+	&__container {
+	}
 
-//====================================================================================================
+	// .hero__content
+	&__content {
+	}
+
+	// .hero__media
+	&__media {
+	}
+}
+
+.content-hero {
+	// .content-hero__title
+	&__title {
+	}
+
+	// .content-hero__subtitle
+	&__subtitle {
+	}
+
+	// .content-hero__txt
+	&__txt {
+	}
+
+	// .content-hero__btn-panel
+	&__btn-panel {
+	}
+}
+
+.media-hero {
+	// .media-hero__web-decor
+	&__web-decor {
+	}
+
+	// .media-hero__photo-group
+	&__photo-group {
+	}
+
+	// .media-hero__main-photo
+	&__main-photo {
+	}
+
+	// .media-hero__play-link
+	&__play-link {
+	}
+}
+
+.group-photo {
+	// .group-photo__column
+	&__column {
+	}
+
+	// .group-photo__item
+	&__item {
+	}
+
+	// .group-photo__img
+	&__img {
+	}
+
+	// .group-photo__icon
+	&__icon {
+	}
+}
