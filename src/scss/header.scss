@@ -1,6 +1,23 @@
 .header {
-	margin-top: toRem(30);
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 50;
+
+	padding-top: toRem(30);
+	padding-bottom: toRem(30);
 	margin-bottom: toRem(30);
+
+	background-color: rgba(255, 255, 255, 0.95);
+
+	transition: all 0.5s ease-in-out 0s;
+
+	&._header-scroll {
+		@media (min-width: $mobile) {
+			padding-top: toRem(15);
+			padding-bottom: toRem(15);
+		}
+	}
 	// .header__container
 	&__container {
 		display: grid;

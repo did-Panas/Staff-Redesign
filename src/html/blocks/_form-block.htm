@@ -42,7 +42,7 @@
 				</div>
 
 				<div class="form__item">
-					<select data-required data-validate data-error="select your t-zone" name="form[time-zone]" data-class-modif="form" class="input">
+					<select data-required data-validate data-error="select your t-zone" name="form[time-zone]" data-class-modif="form" class="select input">
 						<option value="1" selected>-Time zone-</option>
 						<option value="2">New York</option>
 						<option value="3">San Francisco</option>
@@ -58,7 +58,9 @@
 					</select>
 				</div>
 
-				<textarea autocomplete="off" name="form[proj-scope]" placeholder="Project scope" class="input"></textarea>
+				<div class="form__item form__item_txtarea">
+					<textarea class="input" autocomplete="off" name="form[proj-scope]" placeholder="Project scope"></textarea>
+				</div>
 
 				<button type="submit" class="form-block__submit button button--md button--fw">Submit</button>
 

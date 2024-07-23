@@ -17,6 +17,7 @@
 
 	&--h1 {
 		font-size: toRem(48);
+		@include adaptiveValue("font-size", 48, 30, 0, 1440, 380);
 
 		line-height: 107%;
 	}
@@ -24,14 +25,6 @@
 	&--h2 {
 		@include adaptiveValue("font-size", 36, 20, 0, 1200, 380);
 		line-height: 121%;
-
-		@media (max-width: em(1200)) {
-			font-weight: 800;
-		}
-
-		@media (max-width: $tablet) {
-			font-weight: 700;
-		}
 
 		& p {
 			@include adaptiveValue("margin-bottom", 8, 4, 0, 1200, 320);
@@ -49,6 +42,17 @@
 			@media (max-width: $tablet) {
 				font-weight: 500;
 			}
+		}
+	}
+
+	&--h1,
+	&--h2 {
+		@media (max-width: em(1200)) {
+			font-weight: 800;
+		}
+
+		@media (max-width: $tablet) {
+			font-weight: 700;
 		}
 	}
 }
