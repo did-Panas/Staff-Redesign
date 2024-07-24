@@ -17,7 +17,7 @@
 
 	&--h1 {
 		font-size: toRem(48);
-		@include adaptiveValue("font-size", 48, 30, 0, 1440, 380);
+		@include adaptiveValue("font-size", 48, 26, 0, 1440, 380);
 
 		line-height: 107%;
 	}
@@ -65,9 +65,13 @@
 	&--lg {
 		color: $neutral-grey-3;
 
-		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 17, 0, 1440, 380);
 		font-weight: 500;
 		line-height: 142.52%;
+
+		@media (max-width: $tablet) {
+			font-weight: 400;
+		}
 	}
 }
 
