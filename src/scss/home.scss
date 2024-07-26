@@ -1,3 +1,5 @@
+// ===== HERO - section >>> ===================================================
+
 .hero {
 	// .hero__container
 	&__container {
@@ -45,6 +47,14 @@
 		display: inline-block;
 
 		margin-bottom: toRem(8);
+
+		// Animation
+		opacity: 0;
+
+		&._watcher-view {
+			opacity: 1;
+			transition: opacity 1s ease 0.1s;
+		}
 	}
 
 	// .content-hero__subtitle
@@ -55,6 +65,14 @@
 		font-weight: 700;
 		line-height: 142.52%;
 
+		// Animation
+		opacity: 0;
+
+		&._watcher-view {
+			opacity: 1;
+			transition: opacity 1s ease 0.3s;
+		}
+
 		@media (max-width: $tablet) {
 			font-weight: 600;
 		}
@@ -63,6 +81,14 @@
 	// .content-hero__txt
 	&__txt {
 		margin-bottom: toRem(29);
+
+		// Animation
+		opacity: 0;
+
+		&._watcher-view {
+			opacity: 1;
+			transition: opacity 1s ease 0.6s;
+		}
 	}
 
 	// .content-hero__btn-panel
@@ -70,6 +96,14 @@
 		display: flex;
 		gap: toRem(21);
 		flex-wrap: wrap;
+
+		// Animation
+		opacity: 0;
+
+		&._watcher-view {
+			opacity: 1;
+			transition: opacity 1s ease 0.9s;
+		}
 
 		@media (min-width: em(730)) {
 			margin-bottom: toRem(60);
@@ -108,6 +142,16 @@
 
 		aspect-ratio: 543 / 540;
 		width: toRem(543);
+
+		@media (min-width: $tablet) {
+			// Animation
+			transform: scale(0.1);
+
+			&._watcher-view {
+				transform: scale(1);
+				transition: transform 2.5s ease 0.5s;
+			}
+		}
 
 		@media (max-width: em(729.98)) {
 			top: auto;
@@ -213,6 +257,17 @@
 			line-height: 142.857143%; /* 20/14 */
 		}
 
+		@media (min-width: $tablet) {
+			// Animation
+			transform: rotate(15deg) scale(0.7);
+			overflow: hidden;
+
+			&._watcher-view {
+				transform: rotate(0) scale(1);
+				transition: transform 2.5s ease 0.5s;
+			}
+		}
+
 		@media (max-width: $tablet) {
 			margin-bottom: toRem(60);
 			align-self: end;
@@ -231,8 +286,17 @@
 		flex-direction: column;
 		gap: toRem(14);
 
-		&:last-child {
+		transform: translate(0, toRem(-20));
+	}
+
+	&._watcher-view {
+		.group-photo__column:first-child {
+			transform: translate(0, 0);
+			transition: transform 1.8s ease 0.5s;
+		}
+		.group-photo__column:last-child {
 			transform: translate(0, toRem(40));
+			transition: transform 1.8s ease 0.5s;
 		}
 	}
 
@@ -281,3 +345,8 @@
 		}
 	}
 }
+// =================================================== >>> HERO - section =====
+
+// ===== PARTNERS - section >>> ===============================================
+
+// =============================================== >>> PARTNERS - section =====
