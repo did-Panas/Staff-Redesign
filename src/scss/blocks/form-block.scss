@@ -239,11 +239,11 @@
 		&::before {
 			content: "";
 			position: absolute;
-			width: toRem(989);
-			height: toRem(472);
-			bottom: toRem(-80);
-			left: toRem(-290);
-			background-image: url("@img/form/glare-right.svg");
+			width: toRem(792);
+			height: toRem(378);
+			bottom: toRem(-50);
+			left: toRem(-120);
+			background-image: url("@img/form/glare-form.svg");
 			background-position: center center; /* x y */
 			background-size: cover;
 			background-repeat: no-repeat;

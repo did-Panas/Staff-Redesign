@@ -260,11 +260,14 @@
 		@media (min-width: $tablet) {
 			// Animation
 			transform: rotate(15deg) scale(0.7);
-			overflow: hidden;
+			opacity: 0;
 
 			&._watcher-view {
 				transform: rotate(0) scale(1);
-				transition: transform 2.5s ease 0.5s;
+				opacity: 1;
+				transition:
+					opacity 1s 0.5s,
+					transform 1.5s ease 0.5s;
 			}
 		}
 
@@ -348,5 +351,78 @@
 // =================================================== >>> HERO - section =====
 
 // ===== PARTNERS - section >>> ===============================================
+
+.partners {
+	background: linear-gradient(138.22deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 83.914%);
+	// .partners__container
+	&__container {
+		position: relative;
+
+		overflow: hidden;
+	}
+
+	// .partners__glare-img
+	&__glare-img {
+		position: absolute;
+
+		width: toRem(990);
+		height: toRem(713);
+
+		transform: rotate(-15deg);
+
+		// .partners__glare-img_left
+		&_left {
+			top: toRem(-90);
+			left: toRem(-70);
+		}
+
+		// .partners__glare-img_right
+		&_right {
+			top: toRem(-300);
+			right: toRem(-250);
+		}
+	}
+
+	// .partners__list
+	&__list {
+		display: flex;
+		gap: toRem(20);
+		justify-content: space-between;
+		align-items: center;
+
+		max-width: toRem(1090);
+		margin: 0 auto;
+		@include adaptiveValue("padding-top", 47, 20, 0, 1440, 768);
+		@include adaptiveValue("padding-bottom", 47, 20, 0, 1440, 768);
+
+		@media (max-width: $mobileSmall) {
+			flex-wrap: wrap;
+			gap: 30px;
+			justify-content: center;
+		}
+	}
+
+	// .partners__item
+	&__item {
+		opacity: 0.3;
+		transition: opacity 0.3s ease 0s;
+		max-height: toRem(77);
+
+		@media (max-width: $mobileSmall) {
+			height: toRem(30);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		& svg {
+			max-height: 100%;
+			width: 100%;
+		}
+	}
+}
 
 // =============================================== >>> PARTNERS - section =====

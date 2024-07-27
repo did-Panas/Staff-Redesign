@@ -1,6 +1,8 @@
 //====================================================================================================
 
 .footer {
+	position: relative;
+	z-index: 50;
 	@include adaptiveValue("padding-top", 60, 50, 0, 1440, 991.98);
 
 	color: $contrast-1;
@@ -228,6 +230,10 @@
 	&__list {
 		display: flex;
 		gap: toRem(9);
+
+		@media (max-width: $tablet) {
+			gap: toRem(15);
+		}
 	}
 
 	// .socials__item
@@ -244,6 +250,11 @@
 				&:hover {
 					fill: $accentColor;
 				}
+			}
+
+			@media (max-width: $tablet) {
+				width: toRem(35);
+				height: toRem(35);
 			}
 		}
 	}
