@@ -27,7 +27,7 @@
 		line-height: 121%;
 
 		& p {
-			@include adaptiveValue("margin-bottom", 8, 4, 0, 1200, 320);
+			@include adaptiveValue("margin-bottom", 5, 4, 0, 1200, 320);
 
 			color: $neutral-grey-1;
 
