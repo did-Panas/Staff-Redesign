@@ -8,16 +8,21 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: toRem(28);
+		gap: toRem(25);
+
+		max-width: toRem(1090);
+		margin: 0 auto;
 	}
 
 	// .advantages__item
 	&__item {
 		position: relative;
+		z-index: 1;
 
 		flex: 0 0 toRem(252);
 		padding: toRem(37) toRem(27) toRem(41);
 
+		background: rgb(255, 255, 255);
 		border-radius: toRem(8);
 		cursor: pointer;
 
@@ -26,6 +31,10 @@
 
 		transition: all 0.9s ease 0s;
 
+		@media (min-width: $tablet) {
+			box-shadow: 0px 2.66px 12.62px 0px rgba(179, 179, 179, 0.25);
+		}
+
 		@media (max-width: $tablet) {
 			padding: toRem(25) toRem(27) toRem(30);
 		}
@@ -33,6 +42,7 @@
 		&::before {
 			content: "";
 			position: absolute;
+			z-index: 3;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -112,13 +122,6 @@
 		text-transform: uppercase;
 
 		transition: color 0.3s ease 0s;
-
-		// .advantages__subtitle_accent
-		&_accent {
-			color: $accentColor;
-
-			font-size: toRem(43);
-		}
 	}
 
 	// .advantages__txt

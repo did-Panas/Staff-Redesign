@@ -60,8 +60,9 @@
 .txt {
 	color: $neutral-grey-2;
 
-	font-size: toRem(16);
+	@include adaptiveValue("font-size", 16, 14, 0, 1440, 380);
 	line-height: 143.75%; /* 23/16 */
+
 	&--lg {
 		color: $neutral-grey-3;
 

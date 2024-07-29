@@ -188,6 +188,8 @@ body {
 	}
 	// .page__about-us
 	&__about-us {
+		@include adaptiveValue("padding-top", 90, 60, 0, 991, 380);
+		@include adaptiveValue("padding-bottom", 110, 90, 0, 991, 380);
 	}
 	// .page__services
 	&__services {

@@ -431,26 +431,35 @@
 .about-us {
 	// .about-us__main-title
 	&__main-title {
+		margin-bottom: toRem(55);
 	}
 
 	// .about-us__container
 	&__container {
+		text-align: center;
 	}
 
 	// .about-us__title
 	&__title {
+		margin-bottom: toRem(10);
 	}
 
 	// .about-us__txt
 	&__txt {
+		max-width: toRem(630);
+		margin: 0 auto;
 	}
 
 	// .about-us__advantages
 	&__advantages {
+		margin-bottom: toRem(93);
 	}
 
 	// .about-us__article
 	&__article {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 223, 90, 0, 991, 600);
+		}
 	}
 }
 
@@ -459,65 +468,213 @@
 	&__container {
 	}
 
+	// .article-about__body
+	&__body {
+		display: flex;
+		gap: toRem(70);
+		align-items: center;
+		justify-content: space-between;
+
+		max-width: toRem(1090);
+		margin: 0 auto;
+
+		@media (max-width: $mobile) {
+			gap: toRem(40);
+		}
+
+		@media (min-width: em(600)) {
+		}
+
+		@media (max-width: em(599.98)) {
+			align-items: center;
+			text-align: center;
+		}
+
+		// . article-about__body_right
+		&_right {
+			@media (max-width: em(599.98)) {
+				flex-direction: column;
+			}
+		}
+
+		// . article-about__body_left
+		&_left {
+			@media (max-width: em(599.98)) {
+				flex-direction: column-reverse;
+			}
+		}
+	}
+
 	// .article-about__content
 	&__content {
 	}
 
 	// .article-about__block-title
 	&__block-title {
+		margin-bottom: toRem(11);
 	}
 
 	// .article-about__block-subtitle
 	&__block-subtitle {
+		margin-bottom: toRem(6);
+
+		@include adaptiveValue("font-size", 18, 15, 0, 1440, 380);
+		font-weight: 700;
+		line-height: 150%; /* 27/18 */
 	}
 
 	// .article-about__block-txt
 	&__block-txt {
+		max-width: toRem(480);
+		margin-bottom: toRem(22);
+
+		font-weight: 500;
+		line-height: 150%; /* 24/16 */
 	}
 
 	// .article-about__decor
 	&__decor {
+		@media (min-width: em(600)) {
+			flex: 0 1 toRem(501);
+		}
+
+		@media (max-width: em(599.98)) {
+			max-width: toRem(501);
+		}
+	}
+
+	// .article-about__btn
+	&__btn {
 	}
 }
 
 .about-decor {
-	// .about-decor_right
-	&_right {
-	}
-
-	// .about-decor_left
-	&_left {
-	}
-
 	// .about-decor__body
 	&__body {
+		display: grid;
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+		grid-column-gap: 3.592814%; /* 18/501 */
+		grid-row-gap: 4.534005%; /* 18/397 */
+
+		aspect-ratio: 501 / 397;
+		max-width: toRem(501);
+
 		// .about-decor__body_right
 		&_right {
+			& .about-decor__photo {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+			}
+
+			& .about-decor__lg-pic-bl {
+				grid-column: 2 / -1;
+				grid-row: 1 / -1;
+			}
+
+			& .about-decor__icon {
+				grid-column: 1 / 2;
+				grid-row: 2 / -1;
+			}
+
+			& .about-decor__main-photo {
+				right: toRem(-8);
+
+				width: 148.117155%; /* 354/239 */
+			}
 		}
 
 		// .about-decor__body_left
 		&_left {
+			& .about-decor__lg-pic-bl {
+				grid-column: 1 / 2;
+				grid-row: 1 / -1;
+			}
+
+			& .about-decor__icon {
+				grid-column: 2 / -1;
+				grid-row: 1 / 2;
+			}
+
+			& .about-decor__main-photo {
+				left: toRem(-14);
+
+				width: 127.615063%; /* 305/239 */
+			}
 		}
+	}
+
+	// .about-decor__item
+	&__item {
+		border-radius: toRem(8);
+		overflow: hidden;
 	}
 
 	// .about-decor__photo
 	&__photo {
+		aspect-ratio: 239 / 188;
 	}
 
 	// .about-decor__lg-pic-bl
 	&__lg-pic-bl {
+		position: relative;
+		overflow: visible;
+
+		aspect-ratio: 239 / 393;
+
+		background-image: image-set(
+			url("@img/home/about-us/about-01@2x.jpeg") 2x,
+			url("@img/home/about-us/about-01@1x.jpeg") 1x
+		);
+		background-position: center center; /* x y */
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	// .about-decor__web-icon
 	&__web-icon {
+		width: 87.029289%; /* 208/239 */
+		margin: 7.304786% auto 0;
+		& img {
+			width: 100%;
+		}
 	}
 
 	// .about-decor__main-photo
 	&__main-photo {
+		position: absolute;
+		bottom: 0;
+
+		aspect-ratio: 354 / 421;
+		height: 106.04534%; /* 421/397 */
 	}
 
 	// .about-decor__icon
 	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		aspect-ratio: 239 / 188;
+
+		background-color: $accentColor;
+
+		// .about-decor__icon_brief-logo
+		&_brief-logo {
+			& svg {
+				width: 47.698745%; /* 114/239 */
+			}
+		}
+
+		// .about-decor__icon_lorem
+		&_lorem {
+			& svg {
+				height: 48.93617%; /* 92/188 */
+			}
+		}
+
+		& svg {
+			fill: $neutral-white-1;
+		}
 	}
 }
 
