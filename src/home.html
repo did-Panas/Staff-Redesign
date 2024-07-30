@@ -501,13 +501,13 @@
 							</div>
 
 							<div class="article-about__decor about-decor">
-								<div class="about-decor__body about-decor__body_right">
+								<div data-prlx-parent class="about-decor__body about-decor__body_right">
 
-									<div class="about-decor__item about-decor__photo about-decor__photo-ibg">
+									<div data-prlx data-coefficient="4" class="about-decor__item about-decor__photo about-decor__photo-ibg">
 										<img src="@img/home/about-us/about-02@1x.jpeg" srcset="@img/home/about-us/about-02@2x.jpeg 2x" alt="Image">
 									</div>
 
-									<div class="about-decor__item about-decor__lg-pic-bl">
+									<div data-prlx data-coefficient="8" class="about-decor__item about-decor__lg-pic-bl">
 										<div class="about-decor__web-icon">
 											<img src="@img/home/about-us/icon-web.svg" alt="Icon">
 										</div>
@@ -516,7 +516,7 @@
 										</div>
 									</div>
 
-									<div class="about-decor__item about-decor__icon about-decor__icon_brief-logo">
+									<div data-prlx data-coefficient="4" class="about-decor__item about-decor__icon about-decor__icon_brief-logo">
 										<svg>
 											<use xlink:href="@img/icons/icons.svg#brief-logo"></use>
 										</svg>
@@ -534,9 +534,9 @@
 						<div class="article-about__body article-about__body_left">
 
 							<div class="article-about__decor about-decor">
-								<div class="about-decor__body about-decor__body_left">
+								<div data-prlx-parent class="about-decor__body about-decor__body_left">
 
-									<div class="about-decor__item about-decor__lg-pic-bl">
+									<div data-prlx data-coefficient="8" class="about-decor__item about-decor__lg-pic-bl">
 										<div class="about-decor__web-icon">
 											<img src="@img/home/about-us/icon-web.svg" alt="Icon">
 										</div>
@@ -545,11 +545,11 @@
 										</div>
 									</div>
 
-									<div class="about-decor__item about-decor__photo">
+									<div data-prlx data-coefficient="4" class="about-decor__item about-decor__photo">
 										<img src="@img/home/about-us/about-05@1x.jpeg" srcset="@img/home/about-us/about-05@2x.jpeg 2x" alt="Image">
 									</div>
 
-									<div class="about-decor__item about-decor__icon about-decor__icon_lorem">
+									<div data-prlx data-coefficient="4" class="about-decor__item about-decor__icon about-decor__icon_lorem">
 										<svg>
 											<use xlink:href="@img/icons/icons.svg#lorem"></use>
 										</svg>
@@ -583,6 +583,90 @@
 						</div>
 					</div>
 				</article>
+
+			</section>
+
+			@@include('html/blocks/_home-services.htm',{})
+
+			<section class="page__portfolio portfolio">
+
+				<div class="portfolio__title">
+					<div class="portfolio__container">
+
+						<h2 class="portfolio__title title title--h2">
+							<p>OUR PORTFOLIO</p>
+							THE PROOF IS<br>
+							<span>IN THE PUDDING</span>
+						</h2>
+
+						<p class="portfolio__txt txt">
+							When we say "we have access to world-class creative professionals across 35 high-quality but low-cost talent markets"...
+						</p>
+
+					</div>
+				</div>
+
+				<div class="portfolio__content">
+					<div class="portfolio__slider slider-portf swiper">
+						<div class="slider-portf__wrapper swiper-wrapper">
+
+							<div class="slider-portf__slide swiper-slide">
+								<div class="slider-portf__slide-img">
+									<a href="#!" class="slider-portf__slide-img-link">
+										<img src="@img/home/portfolio/slide-img-01@1x.jpeg" srcset="@img/home/portfolio/slide-img-01@2x.jpeg 2x" alt="Image">
+									</a>
+								</div>
+								<h3 class="slider-portf__slide-title title title--h2">
+									<a href="#!" class="slider-portf__slide-link">
+										MOBILE DESIGN<br>
+										<span>ABSTRACT MOBILE DESIGN</span>
+									</a>
+								</h3>
+							</div>
+							<div class="slider-portf__slide swiper-slide">
+								<div class="slider-portf__slide-img">
+									<a href="#!" class="slider-portf__slide-img-link">
+										<img src="@img/home/portfolio/slide-img-02@1x.jpeg" srcset="@img/home/portfolio/slide-img-02@2x.jpeg 2x" alt="Image">
+									</a>
+								</div>
+								<h3 class="slider-portf__slide-title title title--h2">
+									<a href="#!" class="slider-portf__slide-link">
+										MOBILE DESIGN<br>
+										<span>ABSTRACT MOBILE DESIGN</span>
+									</a>
+								</h3>
+							</div>
+							<div class="slider-portf__slide swiper-slide">
+								<div class="slider-portf__slide-img">
+									<a href="#!" class="slider-portf__slide-img-link">
+										<img src="@img/home/portfolio/slide-img-01@1x.jpeg" srcset="@img/home/portfolio/slide-img-01@2x.jpeg 2x" alt="Image">
+									</a>
+								</div>
+								<h3 class="slider-portf__slide-title title title--h2">
+									<a href="#!" class="slider-portf__slide-link">
+										MOBILE DESIGN<br>
+										<span>ABSTRACT MOBILE DESIGN</span>
+									</a>
+								</h3>
+							</div>
+
+						</div>
+						<div class="slider-portf__button-next">
+							<svg>
+								<use xlink:href="@img/icons/icons.svg#round-arrow"></use>
+							</svg>
+						</div>
+						<div class="slider-portf__button-prev">
+							<svg>
+								<use xlink:href="@img/icons/icons.svg#round-arrow"></use>
+							</svg>
+						</div>
+						<div class="slider-portf__pagination"></div>
+						<a href="#!" data-slide-btn class="slider-portf__btn button button--md">
+							Show More
+						</a>
+					</div>
+				</div>
 
 			</section>
 

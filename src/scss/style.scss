@@ -191,6 +191,9 @@ body {
 		@include adaptiveValue("padding-top", 90, 60, 0, 991, 380);
 		@include adaptiveValue("padding-bottom", 110, 90, 0, 991, 380);
 	}
+	// .page__portfolio
+	&__portfolio {
+	}
 	// .page__services
 	&__services {
 		padding: toRem(101) toRem(0) toRem(138);

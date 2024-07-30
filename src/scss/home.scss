@@ -611,6 +611,9 @@
 
 	// .about-decor__photo
 	&__photo {
+		position: relative;
+		z-index: -1;
+
 		aspect-ratio: 239 / 188;
 	}
 
@@ -642,6 +645,7 @@
 	// .about-decor__main-photo
 	&__main-photo {
 		position: absolute;
+		z-index: 5;
 		bottom: 0;
 
 		aspect-ratio: 354 / 421;
@@ -650,6 +654,9 @@
 
 	// .about-decor__icon
 	&__icon {
+		position: relative;
+		z-index: -1;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -679,3 +686,71 @@
 }
 
 // =============================================== >>> ABOUT-US - section =====
+
+// ===== PORTFOLIO - section >>> ===============================================
+
+.portfolio {
+	// .portfolio__title
+	&__title {
+	}
+
+	// .portfolio__container
+	&__container {
+	}
+
+	// .portfolio__txt
+	&__txt {
+	}
+
+	// .portfolio__content
+	&__content {
+	}
+
+	// .portfolio__slider
+	&__slider {
+	}
+}
+
+.slider-portf {
+	// .slider-portf__wrapper
+	&__wrapper {
+	}
+
+	// .slider-portf__slide
+	&__slide {
+	}
+
+	// .slider-portf__slide-img
+	&__slide-img {
+	}
+
+	// .slider-portf__slide-img-link
+	&__slide-img-link {
+	}
+
+	// .slider-portf__slide-title
+	&__slide-title {
+	}
+
+	// .slider-portf__slide-link
+	&__slide-link {
+	}
+
+	// .slider-portf__button-next
+	&__button-next {
+	}
+
+	// .slider-portf__button-prev
+	&__button-prev {
+	}
+
+	// .slider-portf__pagination
+	&__pagination {
+	}
+
+	// .slider-portf__btn
+	&__btn {
+	}
+}
+
+// =============================================== >>> PORTFOLIO - section =====
