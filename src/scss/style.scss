@@ -28,6 +28,7 @@ $neutral-white-1: #fff;
 $neutral-white-2: #f9f9f9;
 $neutral-white-3: #f4efff;
 $neutral-white-4: #ededed;
+$neutral-white-5: #e2e2e2;
 $neutral-grey-1: #b0b0b0;
 $neutral-grey-2: #8c8d94;
 $neutral-grey-3: #777;
@@ -193,6 +194,7 @@ body {
 	}
 	// .page__portfolio
 	&__portfolio {
+		padding: toRem(85) toRem(0) toRem(140) toRem(0);
 	}
 	// .page__services
 	&__services {

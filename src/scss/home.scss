@@ -690,24 +690,45 @@
 // ===== PORTFOLIO - section >>> ===============================================
 
 .portfolio {
-	// .portfolio__title
-	&__title {
+	// .portfolio__top
+	&__top {
+		margin-bottom: toRem(48);
+
+		text-align: center;
 	}
 
 	// .portfolio__container
 	&__container {
 	}
 
+	// .portfolio__title
+	&__title {
+		margin-bottom: toRem(8);
+	}
+
 	// .portfolio__txt
 	&__txt {
+		max-width: toRem(585);
+		margin: 0 auto;
+
+		line-height: 150%; /* 24/16 */
 	}
 
 	// .portfolio__content
 	&__content {
+		position: relative;
+
+		display: grid;
+		grid-template-columns: toRem(15) 1fr minmax(auto, toRem(1090)) 1fr toRem(15);
 	}
 
 	// .portfolio__slider
 	&__slider {
+		grid-column: 1 / 6;
+
+		@media (min-width: $mobile) {
+			grid-column: 3 / 6;
+		}
 	}
 }
 
@@ -718,10 +739,42 @@
 
 	// .slider-portf__slide
 	&__slide {
+		opacity: 0.48;
+		&.swiper-slide-active {
+			transition: opacity 0.5s ease 0.3s;
+			opacity: 1;
+
+			& .slider-portf__slide-link {
+				transition: color 0.3s ease 0s;
+
+				@media (any-hover: hover) {
+					&:hover {
+						text-decoration: underline;
+						color: $accentColor;
+					}
+				}
+			}
+		}
+
+		&.swiper-slide-active .slider-portf__slide-img {
+			aspect-ratio: 457 / 436;
+		}
+
+		&:not(.swiper-slide-active) {
+			margin-top: 4%;
+
+			& .slider-portf__slide-link {
+				pointer-events: none;
+				cursor: default;
+			}
+		}
 	}
 
 	// .slider-portf__slide-img
 	&__slide-img {
+		margin-bottom: toRem(27);
+		aspect-ratio: 457 / 310;
+		max-width: toRem(457);
 	}
 
 	// .slider-portf__slide-img-link
@@ -730,10 +783,35 @@
 
 	// .slider-portf__slide-title
 	&__slide-title {
+		font-size: toRem(24);
 	}
 
 	// .slider-portf__slide-link
 	&__slide-link {
+	}
+
+	// .slider-portf__ctrl-panel
+	&__ctrl-panel {
+		position: absolute;
+		left: 46.527778%; /* 670/1440 */
+		bottom: toRem(-40);
+		width: 41.180556%; /* 593/1440 */
+
+		display: grid;
+		grid-template: auto 1fr / 1fr 1fr;
+		align-items: center;
+		grid-row-gap: toRem(30);
+	}
+
+	// .slider-portf__btns
+	&__btns {
+		grid-column: 1 / 2;
+		grid-row: 2 / -1;
+		justify-self: start;
+
+		display: inline-flex;
+		flex-direction: row-reverse;
+		gap: toRem(25);
 	}
 
 	// .slider-portf__button-next
@@ -742,15 +820,99 @@
 
 	// .slider-portf__button-prev
 	&__button-prev {
+		& svg {
+			transform: rotate(-180deg);
+		}
+	}
+
+	// .slider-portf__button-next, .slider-portf__button-prev
+	&__button-next,
+	&__button-prev {
+		cursor: pointer;
+
+		@media (any-hover: hover) {
+			&:hover {
+				& svg {
+					stroke: $accentColor;
+					transition: all 0.3s ease 0s;
+				}
+			}
+		}
+
+		& svg {
+			aspect-ratio: 1 / 1;
+			width: toRem(61.4);
+
+			stroke: $contrast-2;
+			fill: transparent;
+
+			transition: all 0.3s ease 0s;
+		}
 	}
 
 	// .slider-portf__pagination
 	&__pagination {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
 	}
 
 	// .slider-portf__btn
 	&__btn {
+		grid-column: 2 / -1;
+		grid-row: 2 / -1;
+		justify-self: end;
 	}
+}
+
+// === Swiper-Pagination-Progressbar ======
+
+.swiper-pagination {
+	position: absolute;
+	text-align: center;
+	transition: 0.3s opacity;
+	transform: translate3d(0, 0, 0);
+	z-index: 10;
+}
+.swiper-pagination.swiper-pagination-hidden {
+	opacity: 0;
+}
+.swiper-pagination-progressbar {
+	background: $neutral-white-5;
+	position: absolute;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+	background: $accentColor;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transform: scale(0);
+	transform-origin: left top;
+}
+.swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+	transform-origin: right top;
+}
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal,
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+.swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+	width: 100%;
+	height: 2px;
+	left: 0;
+	top: 0;
+}
+.swiper-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+.swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,
+.swiper-pagination-progressbar.swiper-pagination-vertical,
+.swiper-vertical > .swiper-pagination-progressbar {
+	width: 4px;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.swiper-pagination-lock {
+	display: none;
 }
 
 // =============================================== >>> PORTFOLIO - section =====
