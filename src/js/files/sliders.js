@@ -101,11 +101,30 @@ function initSliders() {
 			*/
 			// Події
 			on: {
-
+				slideChangeTransitionEnd: function () {
+					getSlideLink();
+				},
 			}
 		});
 	}
 }
+
+// Button's link changing after active slide changing
+function getSlideLink() {
+	const btn = document.querySelector('[data-slide-btn]');
+	const slidesLinks = document.querySelectorAll('.slider-portf__slide-link');
+
+	for (const link of slidesLinks) {
+
+		if (link.closest('.slider-portf__slide.swiper-slide-active')) {
+			btn.href = link.href;
+		}
+
+	}
+
+
+}
+
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
