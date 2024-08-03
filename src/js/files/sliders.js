@@ -36,8 +36,8 @@ function initSliders() {
 			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 2.65,
-			spaceBetween: 40.5,
+			// slidesPerView: 2.65,
+			// spaceBetween: 40.5,
 			autoHeight: true,
 			speed: 800,
 
@@ -77,28 +77,24 @@ function initSliders() {
 				prevEl: '.slider-portf__button-prev',
 				nextEl: '.slider-portf__button-next',
 			},
-			/*
+
 			// Брейкпоінти
 			breakpoints: {
+				// 640: {
+				// 	slidesPerView: 1,
+				// 	spaceBetween: 0,
+				// 	autoHeight: true,
+				// },
 				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
 					slidesPerView: 2,
 					spaceBetween: 20,
 				},
 				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+					slidesPerView: 2.65,
+					spaceBetween: 40.5,
 				},
 			},
-			*/
+
 			// Події
 			on: {
 				slideChangeTransitionEnd: function () {

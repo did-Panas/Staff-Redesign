@@ -194,7 +194,10 @@ body {
 	}
 	// .page__portfolio
 	&__portfolio {
-		padding: toRem(85) toRem(0) toRem(140) toRem(0);
+		padding: toRem(85) toRem(0) toRem(140);
+		@media (max-width: $tablet) {
+			padding: toRem(70) toRem(0) toRem(120);
+		}
 	}
 	// .page__services
 	&__services {

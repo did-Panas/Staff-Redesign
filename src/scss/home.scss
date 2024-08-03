@@ -726,6 +726,8 @@
 	&__slider {
 		grid-column: 1 / 6;
 
+		max-width: toRem(1350);
+
 		@media (min-width: $mobile) {
 			grid-column: 3 / 6;
 		}
@@ -792,15 +794,25 @@
 
 	// .slider-portf__ctrl-panel
 	&__ctrl-panel {
-		position: absolute;
-		left: 46.527778%; /* 670/1440 */
-		bottom: toRem(-40);
+		position: relative;
+
 		width: 41.180556%; /* 593/1440 */
+		width: toRem(593);
 
 		display: grid;
 		grid-template: auto 1fr / 1fr 1fr;
 		align-items: center;
 		grid-row-gap: toRem(30);
+
+		@media (min-width: $tablet) {
+			position: absolute;
+			@include adaptiveValue("right", 178, 202, 0, 1440, 1200);
+			@include adaptiveValue("bottom", -40, -65, 0, 1440, 992);
+		}
+
+		@media (max-width: em(1199.98)) {
+			//right: toRem(15);
+		}
 	}
 
 	// .slider-portf__btns
