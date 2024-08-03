@@ -192,17 +192,17 @@ body {
 		@include adaptiveValue("padding-top", 90, 60, 0, 991, 380);
 		@include adaptiveValue("padding-bottom", 110, 90, 0, 991, 380);
 	}
-	// .page__portfolio
-	&__portfolio {
-		padding: toRem(85) toRem(0) toRem(140);
-		@media (max-width: $tablet) {
-			padding: toRem(70) toRem(0) toRem(120);
-		}
-	}
 	// .page__services
 	&__services {
 		padding: toRem(101) toRem(0) toRem(138);
 
+		@media (max-width: $tablet) {
+			padding: toRem(70) toRem(0) toRem(80);
+		}
+	}
+	// .page__portfolio
+	&__portfolio {
+		padding: toRem(85) toRem(0) toRem(140);
 		@media (max-width: $tablet) {
 			padding: toRem(70) toRem(0) toRem(80);
 		}

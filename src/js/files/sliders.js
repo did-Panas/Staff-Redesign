@@ -37,7 +37,7 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			// slidesPerView: 2.65,
-			// spaceBetween: 40.5,
+			spaceBetween: 15,
 			autoHeight: true,
 			speed: 800,
 
@@ -80,12 +80,11 @@ function initSliders() {
 
 			// Брейкпоінти
 			breakpoints: {
-				// 640: {
-				// 	slidesPerView: 1,
-				// 	spaceBetween: 0,
-				// 	autoHeight: true,
-				// },
-				640: {
+				431: {
+					slidesPerView: 1.4,
+					spaceBetween: 15,
+				},
+				600: {
 					slidesPerView: 2,
 					spaceBetween: 20,
 				},
