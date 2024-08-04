@@ -228,7 +228,7 @@
 		box-shadow: 0px 3px 68.25px 0px rgba(152, 152, 152, 0.25);
 		background: rgb(255, 255, 255);
 
-		transition: background 0.3s ease 0s;
+		transition: background 0.5s ease 0s;
 
 		@media (any-hover: hover) {
 			&:hover {
@@ -992,6 +992,9 @@
 
 	// .studies__top
 	&__top {
+		position: relative;
+		z-index: 5;
+
 		text-align: center;
 	}
 
@@ -1013,7 +1016,9 @@
 	&__body {
 		position: relative;
 
-		padding: 0 toRem(65);
+		@media (min-width: $tablet) {
+			padding: 0 toRem(65);
+		}
 
 		&::before {
 			content: "";
@@ -1049,6 +1054,11 @@
 		display: flex;
 		justify-content: space-between;
 		gap: toRem(15);
+
+		@media (max-width: em(800)) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 
 	// .studies__card
@@ -1057,9 +1067,17 @@
 
 	// .studies__btn
 	&__btn {
+		position: relative;
+
 		justify-self: center;
 
 		min-width: toRem(245);
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
 	}
 }
 
@@ -1068,6 +1086,9 @@
 	z-index: 5;
 
 	flex: 0 1 toRem(345);
+
+	display: flex;
+	flex-direction: column;
 
 	padding: toRem(24) toRem(27) toRem(39);
 
@@ -1090,9 +1111,15 @@
 	// .card-studies__logo
 	&__logo {
 		position: absolute;
+
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	}
 
 	// .card-studies__content
@@ -1103,36 +1130,157 @@
 	&__title {
 		margin-bottom: toRem(12);
 
-		color: $accentColor;
+		color: $neutral-white-1;
 
-		& span {
-			color: $neutral-white-1;
-		}
+		@include adaptiveValue("font-size", 24, 18, 0, 1200, 380);
+		line-height: 107%;
 	}
 
 	// .card-studies__title-link
 	&__title-link {
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+				text-decoration: underline;
+				transition: all 0.3s ease 0s;
+			}
+		}
+	}
+
+	// .card-studies__more
+	&__more {
 	}
 
 	// .card-studies__txt
 	&__txt {
 		max-width: toRem(268);
-		margin-bottom: toRem(16);
 
 		color: $neutral-white-1;
 
+		font-size: toRem(16);
 		line-height: 137.5%; /* 22/16 */
+
+		@media (max-width: $tablet) {
+			font-size: toRem(12);
+		}
 	}
 
-	// .card-studies__more-link
-	&__more-link {
+	// .card-studies__more-btn
+	&__more-btn {
 		color: $accentColor;
 		text-transform: uppercase;
 
 		font-size: toRem(17);
 		font-weight: 500;
 		line-height: 142.52%;
+		margin-top: toRem(16);
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $neutral-white-1;
+				transition: all 0.3s ease 0s;
+			}
+		}
 	}
 }
 
 // =============================================== >>> STUDIES - section ======
+
+// ===== BLOG - section >>> ===================================================
+
+.blog {
+	position: relative;
+	z-index: 5;
+}
+
+.blog__btn {
+	min-width: toRem(245);
+}
+
+.blog {
+	// .blog__container
+	&__container {
+	}
+
+	// .blog__top
+	&__top {
+	}
+
+	// .blog__title
+	&__title {
+	}
+
+	// .blog__txt
+	&__txt {
+	}
+
+	// .blog__body
+	&__body {
+	}
+
+	// .blog__btn
+	&__btn {
+	}
+}
+
+.blog-tabs {
+	// .blog-tabs__slider
+	&__slider {
+	}
+
+	// .blog-tabs__navigation
+	&__navigation {
+	}
+
+	// .blog-tabs__wrapper-slider
+	&__wrapper-slider {
+	}
+
+	// .blog-tabs__title
+	&__title {
+	}
+
+	// .blog-tabs__slide
+	&__slide {
+	}
+
+	// .blog-tabs__slider-btns
+	&__slider-btns {
+	}
+
+	// .blog-tabs__btn-next
+	&__btn-next {
+	}
+
+	// .blog-tabs__btn-prev
+	&__btn-prev {
+	}
+
+	// .blog-tabs__content
+	&__content {
+	}
+
+	// .blog-tabs__body
+	&__body {
+	}
+}
+
+.bl-article {
+	// .bl-article__image
+	&__image {
+	}
+
+	// .bl-article__title
+	&__title {
+	}
+
+	// .bl-article__link
+	&__link {
+	}
+
+	// .bl-article__category
+	&__category {
+	}
+}
+
+// =============================================== >>> BLOG - section =========
