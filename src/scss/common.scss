@@ -45,8 +45,14 @@
 		}
 	}
 
+	&--h3 {
+		@include adaptiveValue("font-size", 24, 17, 0, 1200, 380);
+		line-height: 121%;
+	}
+
 	&--h1,
-	&--h2 {
+	&--h2,
+	&--h3 {
 		@media (max-width: em(1200)) {
 			font-weight: 800;
 		}

@@ -1418,10 +1418,7 @@
 	&__title {
 		text-transform: uppercase;
 
-		font-family: "Proxima Nova", sans-serif;
 		@include adaptiveValue("font-size", 22, 16, 0, 1200, 380);
-		font-weight: 900;
-		line-height: 121%;
 
 		@media (max-width: $mobileSmall) {
 			text-align: center;
@@ -1461,3 +1458,7 @@
 }
 
 // =============================================== >>> BLOG - section =========
+
+// ===== CAREERS - section >>> ================================================
+
+// =============================================== >>> CAREERS - section ======
