@@ -7,6 +7,7 @@
 	// .form-block__body
 	&__body {
 		max-width: toRem(1090);
+		margin: 0 auto;
 
 		display: grid;
 		gap: toRem(70);

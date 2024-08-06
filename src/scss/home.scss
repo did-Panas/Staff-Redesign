@@ -1191,45 +1191,102 @@
 .blog {
 	position: relative;
 	z-index: 5;
-}
-
-.blog__btn {
-	min-width: toRem(245);
-}
-
-.blog {
 	// .blog__container
 	&__container {
 	}
 
 	// .blog__top
 	&__top {
+		margin-bottom: toRem(56);
+
+		text-align: center;
 	}
 
 	// .blog__title
 	&__title {
+		margin-bottom: toRem(14);
 	}
 
 	// .blog__txt
 	&__txt {
+		display: grid;
+		gap: toRem(23);
+		justify-items: center;
+
+		max-width: toRem(692);
+		margin: 0 auto;
+
+		font-weight: 500;
+		line-height: 150%; /* 24/16 */
+
+		& strong {
+			max-width: toRem(625);
+
+			color: $mainColor;
+
+			font-weight: 700;
+		}
 	}
 
 	// .blog__body
 	&__body {
+		max-width: toRem(1090);
+		margin: 0 auto toRem(47);
+	}
+
+	// .blog__bottom
+	&__bottom {
+		display: flex;
+		justify-content: center;
 	}
 
 	// .blog__btn
 	&__btn {
+		min-width: toRem(245);
 	}
 }
 
 .blog-tabs {
+	position: relative;
 	// .blog-tabs__slider
 	&__slider {
+		position: relative;
+
+		@media (max-width: em(599.98)) {
+			padding-top: toRem(45);
+		}
+
+		@media (min-width: em(600)) {
+			margin-left: toRem(50);
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: toRem(105);
+				height: toRem(31);
+				right: 0;
+				top: 0;
+				background: linear-gradient(270deg, rgb(255, 255, 255) 43.512%, rgba(255, 255, 255, 0) 97.143%);
+			}
+		}
 	}
 
 	// .blog-tabs__navigation
 	&__navigation {
+		position: relative;
+
+		margin-bottom: toRem(40);
+
+		&::before {
+			content: "";
+			position: absolute;
+			height: 2px;
+			width: 1000%;
+			bottom: 0;
+			left: 0;
+
+			background-color: rgb(239, 239, 239);
+		}
 	}
 
 	// .blog-tabs__wrapper-slider
@@ -1238,10 +1295,44 @@
 
 	// .blog-tabs__title
 	&__title {
+		opacity: 0.22;
+		text-transform: uppercase;
+
+		font-family: "Proxima Nova", sans-serif;
+		@include adaptiveValue("font-size", 20, 15, 0, 1200, 380);
+		font-weight: 900;
+		line-height: 121%;
+
+		transition: all 0.3s ease 0s;
+
+		&._tab-active {
+			color: $accentColor;
+			opacity: 1;
+		}
 	}
 
 	// .blog-tabs__slide
 	&__slide {
+		position: relative;
+		padding-bottom: toRem(24);
+
+		&::before {
+			content: "";
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+
+			background-color: transparent;
+		}
+
+		&._tab-active {
+			&::before {
+				background-color: $accentColor;
+				transition: background-color 0.5s ease 0s;
+			}
+		}
 	}
 
 	// .blog-tabs__slider-btns
@@ -1250,10 +1341,40 @@
 
 	// .blog-tabs__btn-next
 	&__btn-next {
+		z-index: 10;
+		right: 0;
 	}
 
 	// .blog-tabs__btn-prev
 	&__btn-prev {
+		left: 0;
+
+		& svg {
+			transform: rotate(-180deg);
+		}
+	}
+
+	// .blog-tabs__btn-next, .blog-tabs__btn-prev
+	&__btn-next,
+	&__btn-prev {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+
+		display: inline-block;
+
+		cursor: pointer;
+
+		& svg {
+			aspect-ratio: 32 / 24;
+			width: toRem(28);
+		}
+
+		&.swiper-button-disabled {
+			& svg {
+				fill: #d1d2db;
+			}
+		}
 	}
 
 	// .blog-tabs__content
@@ -1263,15 +1384,48 @@
 	// .blog-tabs__body
 	&__body {
 	}
+
+	// .blog-tabs__wrapper-tab
+	&__wrapper-tab {
+		display: grid;
+		@include adaptiveValue("grid-column-gap", 27, 15, 0, 1440, 768);
+		@include adaptiveValue("grid-row-gap", 60, 40, 0, 1440, 768);
+		grid-template-columns: repeat(auto-fit, minmax(toRem(345), 1fr));
+
+		@media (max-width: em(1200)) {
+			grid-template-columns: repeat(auto-fit, minmax(toRem(250), 1fr));
+		}
+	}
 }
 
 .bl-article {
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	gap: toRem(13);
+	align-items: start;
+
 	// .bl-article__image
 	&__image {
+		aspect-ratio: 345 / 329;
+		width: 100%;
+		margin-bottom: toRem(11);
+
+		border-radius: toRem(7);
+		overflow: hidden;
 	}
 
 	// .bl-article__title
 	&__title {
+		text-transform: uppercase;
+
+		font-family: "Proxima Nova", sans-serif;
+		@include adaptiveValue("font-size", 22, 16, 0, 1200, 380);
+		font-weight: 900;
+		line-height: 121%;
+
+		@media (max-width: $mobileSmall) {
+			text-align: center;
+		}
 	}
 
 	// .bl-article__link
@@ -1280,6 +1434,29 @@
 
 	// .bl-article__category
 	&__category {
+		align-self: end;
+		justify-self: start;
+
+		padding: toRem(8) toRem(14);
+
+		border: 1px solid rgb(242, 242, 242);
+		border-radius: toRem(7);
+
+		font-size: toRem(12);
+		font-weight: 500;
+		line-height: 158.333333%; /* 19/12 */
+
+		transition: color 0.3s ease 0s;
+
+		@media (max-width: $mobileSmall) {
+			justify-self: center;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $mainColor;
+			}
+		}
 	}
 }
 
