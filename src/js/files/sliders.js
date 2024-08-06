@@ -186,6 +186,83 @@ function initSliders() {
 		});
 	}
 	// ============================================================= >>>SLIDER-BLOG-TABS =====
+
+	// ===== SLIDER-CAREERS ================================================================
+	if (document.querySelector('.careers__slider')) { // Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.careers__slider', { // Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			// slidesPerView: 2.65,
+			spaceBetween: 15,
+			autoHeight: true,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагінація
+
+			pagination: {
+				el: '.slider-careers_pagination',
+				type: "progressbar",
+			},
+
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.slider-careers__button-prev',
+				nextEl: '.slider-careers__button-next',
+			},
+
+			// Брейкпоінти
+			breakpoints: {
+				431: {
+					slidesPerView: 1.4,
+					spaceBetween: 15,
+				},
+				600: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2.65,
+					spaceBetween: 40.5,
+				},
+			},
+
+			// Події
+			on: {
+				slideChangeTransitionEnd: function () {
+					getSlideLink();
+				},
+			}
+		});
+	}
+	// ============================================================= >>>SLIDER-CAREERS =====
 }
 
 // Button's link changing after active slide changing
