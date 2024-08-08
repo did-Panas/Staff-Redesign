@@ -30,7 +30,7 @@
 
 		padding: 0 toRem(20);
 		min-width: toRem(180);
-		height: toRem(50);
+		min-height: toRem(50);
 
 		@include adaptiveValue("font-size", 18, 17, 0, 991, 550);
 		font-weight: 500;
@@ -69,5 +69,35 @@
 		align-items: center;
 
 		width: 100%;
+	}
+}
+
+.button-prev {
+	& svg {
+		transform: rotate(-180deg);
+	}
+}
+
+.button-prev,
+.button-next {
+	cursor: pointer;
+
+	@media (any-hover: hover) {
+		&:hover {
+			& svg {
+				stroke: $accentColor;
+				transition: all 0.3s ease 0s;
+			}
+		}
+	}
+
+	& svg {
+		aspect-ratio: 1 / 1;
+		@include adaptiveValue("width", 61, 50, 0, 991, 380);
+
+		stroke: $contrast-2;
+		fill: transparent;
+
+		transition: all 0.3s ease 0s;
 	}
 }

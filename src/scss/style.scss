@@ -241,6 +241,18 @@ body {
 	}
 	// .page__careers
 	&__careers {
+		padding-top: toRem(100);
+		margin-bottom: toRem(110);
+
+		@media (max-width: $tablet) {
+			padding-top: toRem(90);
+			margin-bottom: toRem(100);
+		}
+
+		@media (max-width: $mobile) {
+			padding-top: toRem(70);
+			margin-bottom: toRem(80);
+		}
 	}
 	// .page__form
 	&__form {

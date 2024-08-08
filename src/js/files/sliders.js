@@ -196,15 +196,15 @@ function initSliders() {
 			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
-			// slidesPerView: 2.65,
+			slidesPerView: 1,
 			spaceBetween: 15,
-			autoHeight: true,
+			// autoHeight: false,
 			speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
 			loop: true,
-			//preloadImages: false,
+			// preloadImages: false,
 			//lazy: true,
 
 			/*
@@ -219,7 +219,7 @@ function initSliders() {
 			// Пагінація
 
 			pagination: {
-				el: '.slider-careers_pagination',
+				el: '.slider-careers__pagination',
 				type: "progressbar",
 			},
 
@@ -239,26 +239,31 @@ function initSliders() {
 			},
 
 			// Брейкпоінти
+
 			breakpoints: {
-				431: {
-					slidesPerView: 1.4,
-					spaceBetween: 15,
+				490: {
+					slidesPerView: 1.5,
 				},
-				600: {
+				650: {
 					slidesPerView: 2,
-					spaceBetween: 20,
+				},
+				810: {
+					slidesPerView: 2.5,
 				},
 				992: {
-					slidesPerView: 2.65,
-					spaceBetween: 40.5,
+					slidesPerView: 3,
+					spaceBetween: 15,
+				},
+				1270: {
+					slidesPerView: 3.15,
+					spaceBetween: 30,
 				},
 			},
 
+
 			// Події
 			on: {
-				slideChangeTransitionEnd: function () {
-					getSlideLink();
-				},
+
 			}
 		});
 	}
