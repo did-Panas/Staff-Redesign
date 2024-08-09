@@ -254,6 +254,12 @@
 	// .form-block__submit
 	&__submit {
 		position: relative;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
 	}
 }
 
