@@ -170,6 +170,8 @@ body {
 @import "blocks/advantages";
 @import "blocks/home-services";
 @import "blocks/form-block";
+// === ABOUT-US-PAGE ==================================
+@import "pages/about-us";
 // === SERVICES-PAGE ==================================
 @import "pages/our-services";
 // Підключення стилів окремих сторінок
@@ -279,5 +281,7 @@ body {
 .page-about {
 	// .page-about__hero
 	&__hero {
+		padding-top: toRem(110);
+		margin-bottom: toRem(50);
 	}
 }
