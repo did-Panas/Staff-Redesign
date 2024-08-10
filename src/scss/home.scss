@@ -1,6 +1,7 @@
 // ===== HERO - section >>> ===================================================
 
 .hero {
+	margin-top: toRem(30);
 	// .hero__container
 	&__container {
 		display: grid;

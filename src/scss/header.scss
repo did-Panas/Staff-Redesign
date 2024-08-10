@@ -1,7 +1,6 @@
 .header {
 	padding-top: toRem(30);
 	padding-bottom: toRem(30);
-	margin-bottom: toRem(30);
 
 	background-color: rgba(255, 255, 255, 0.95);
 
@@ -221,6 +220,11 @@
 
 	// .menu__link
 	&__link {
+		&.menu__link-disabled {
+			pointer-events: none;
+			cursor: default;
+			color: $neutral-grey-1;
+		}
 	}
 
 	// .menu__btn

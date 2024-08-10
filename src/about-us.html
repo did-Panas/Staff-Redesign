@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"About Us"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{
+		"link01":"menu__link-disabled",
+		"link02":"menu__link-active",
+		"link03":"menu__link-active",
+		"link04":"menu__link-active",
+		"link05":"menu__link-active",
+		"link06":"menu__link-active"
+		})
+		<main class="page-about">
+			<section class="page-about__hero hero-about">
+				<div class="hero-about__container">
+
+					<div class="hero-about__content">
+
+						<h1 class="hero-about__title title title--h1">
+							UNLOCK THE POWER<br>
+							<span>OF GLOBAL TALENT</span>
+						</h1>
+
+						<div class="hero-about__txt txt txt--lg">
+							<p>
+								C9Staff is a boutique staff augmentation solutions provider that specializes in providing global agencies with teams of mid-level to senior-level creative professionals.
+							</p>
+							<p>
+								Our access to 35 high-quality but low-cost international talent markets allows us to deploy highly capable and battle-tested remote workers to augment your existing on-siote
+								team and provide you with leverage to:
+							</p>
+						</div>
+
+					</div>
+
+					<div class="hero-about__decor">
+
+						<div class="hero-about__img-back">
+							<img src="@img/about-us/hero-img-01.svg" alt="Image">
+						</div>
+
+						<div class="hero-about__img-front">
+							<img src="@img/about-us/hero-img-02.svg" alt="Image">
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
