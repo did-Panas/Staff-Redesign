@@ -45,6 +45,10 @@
 		}
 	}
 
+	&--h2-sm {
+		font-size: toRem(27);
+	}
+
 	&--h3 {
 		@include adaptiveValue("font-size", 24, 17, 0, 1200, 380);
 	}
@@ -55,6 +59,7 @@
 
 	&--h1,
 	&--h2,
+	&--h2-sm,
 	&--h3,
 	&--h3-sm {
 		@media (max-width: em(1200)) {
