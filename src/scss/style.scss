@@ -286,5 +286,7 @@ body {
 	}
 	// .page-about__descript
 	&__descript {
+		padding-top: toRem(30);
+		margin-bottom: toRem(70);
 	}
 }
