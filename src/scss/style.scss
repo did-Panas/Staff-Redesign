@@ -284,4 +284,7 @@ body {
 		@include adaptiveValue("padding-top", 110, 50, 0, 1440, 500);
 		margin-bottom: toRem(50);
 	}
+	// .page-about__descript
+	&__descript {
+	}
 }

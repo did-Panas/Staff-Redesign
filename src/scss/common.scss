@@ -6,6 +6,7 @@
 	font-family: "Proxima Nova", sans-serif;
 	text-transform: uppercase;
 	font-weight: 900;
+	line-height: 121%;
 
 	& span {
 		color: $accentColor;
@@ -24,7 +25,6 @@
 
 	&--h2 {
 		@include adaptiveValue("font-size", 36, 20, 0, 1200, 380);
-		line-height: 121%;
 
 		& p {
 			@include adaptiveValue("margin-bottom", 5, 4, 0, 1200, 320);
@@ -47,12 +47,16 @@
 
 	&--h3 {
 		@include adaptiveValue("font-size", 24, 17, 0, 1200, 380);
-		line-height: 121%;
+	}
+
+	&--h3-sm {
+		font-size: toRem(20);
 	}
 
 	&--h1,
 	&--h2,
-	&--h3 {
+	&--h3,
+	&--h3-sm {
 		@media (max-width: em(1200)) {
 			font-weight: 800;
 		}
