@@ -57,11 +57,17 @@
 		font-size: toRem(20);
 	}
 
+	&--h3-lg {
+		font-size: toRem(28);
+		line-height: 107%;
+	}
+
 	&--h1,
 	&--h2,
 	&--h2-sm,
 	&--h3,
-	&--h3-sm {
+	&--h3-sm,
+	&--h3-lg {
 		@media (max-width: em(1200)) {
 			font-weight: 800;
 		}
