@@ -291,5 +291,11 @@ body {
 	}
 	// .page-about__salary
 	&__salary {
+		padding-top: toRem(50);
+		margin-bottom: toRem(120);
+
+		@media (max-width: $mobileSmall) {
+			padding-top: toRem(30);
+		}
 	}
 }

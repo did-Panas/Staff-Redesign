@@ -46,7 +46,7 @@
 	}
 
 	&--h2-sm {
-		font-size: toRem(27);
+		@include adaptiveValue("font-size", 27, 20, 0, 1200, 380);
 	}
 
 	&--h3 {
