@@ -303,8 +303,8 @@
 			inset: 0;
 
 			background-image: image-set(
-				url("@img/about-us/salary/salary-glare-mask@1x.png") 2x,
-				url("@img/about-us/salary/salary-glare-mask@2x.png") 1x
+				url("@img/about-us/salary/salary-glare-mask@2x.png") 2x,
+				url("@img/about-us/salary/salary-glare-mask@1x.png") 1x
 			);
 			background-position: center center; /* x y */
 			background-size: cover;
@@ -386,42 +386,134 @@
 // ===== WHY - section >>> ====================================================
 
 .why {
+	position: relative;
+
+	padding: toRem(120) toRem(0);
+
+	background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 82.654%);
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		inset: 0;
+
+		background-image: image-set(
+			url("@img/about-us/why/why-glare-mask@2x.png") 2x,
+			url("@img/about-us/why/why-glare-mask@2x.png") 1x
+		);
+		background-position: center center; /* x y */
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: 44%; /* 370/804 */
+		background: linear-gradient(0deg, rgb(13, 9, 30) 32.813%, rgba(13, 9, 30, 0) 100%);
+	}
+
 	// .why__container
 	&__container {
 	}
 
 	// .why__title
 	&__title {
+		margin-bottom: toRem(43);
+		text-align: center;
+
+		color: $neutral-white-1;
 	}
 
 	// .why__body
 	&__body {
+		display: grid;
+		grid-template-columns: auto auto 26.399254%;
+		gap: toRem(38);
+
+		max-width: toRem(1072);
+		margin: 0 auto;
 	}
 
 	// .why__slider
 	&__slider {
+		flex: 0 1 toRem(601);
 	}
 
 	// .why__slider-ctrl-panel
 	&__slider-ctrl-panel {
+		position: relative;
+
+		margin-right: toRem(23);
 	}
 
 	// .why__decor-block
 	&__decor-block {
+		position: relative;
+
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		text-align: center;
+
+		min-height: 100%;
+
+		border-radius: toRem(8);
+		background: linear-gradient(138.22deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 91.004%);
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			inset: 0;
+
+			background-image: image-set(
+				url("@img/about-us/why/why-glareSm-mask@2x.png") 2x,
+				url("@img/about-us/why/why-glareSm-mask@1x.png") 1x
+			);
+			background-position: center center; /* x y */
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
 	}
 
 	// .why__decor-img-web
 	&__decor-img-web {
+		position: relative;
+
+		width: 90.812721%; /* 257/283 */
+		margin-top: 5.739514%; /* 26/453 */
 	}
 
 	// .why__decor-photo
 	&__decor-photo {
+		position: absolute;
+		bottom: 0;
+		right: -14.134276%; /* 40/283 */
+		//height: 105.298013%; /* 477/453 */
+		width: 130.035336%; /* 368/283 */
+
+		aspect-ratio: 368 / 477;
+
+		& img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 
 .slider-why {
 	// .slider-why__slider
 	&__slider {
+		height: toRem(453);
+		padding: 0;
 	}
 
 	// .slider-why__wrapper
@@ -430,26 +522,56 @@
 
 	// .slider-why__slide
 	&__slide {
+		//max-height: toRem(205);
+		padding: toRem(38) toRem(54) toRem(36) toRem(46);
+
+		border-radius: toRem(7);
+		border: 1px solid rgba(255, 255, 255, 0.7);
 	}
 
 	// .slider-why__title
 	&__title {
+		margin-bottom: toRem(15);
+
+		color: $neutral-white-1;
 	}
 
 	// .slider-why__txt
 	&__txt {
+		color: $neutral-white-1;
+
+		line-height: 137.5%; /* 22/16 */
 	}
 
 	// .slider-why__btns
 	&__btns {
+		display: inline-flex;
+		flex-direction: column-reverse;
+		gap: toRem(25);
+
+		padding-left: toRem(27);
 	}
 
 	// .slider-why__button-next
 	&__button-next {
+		& svg {
+			transform: rotate(90deg);
+		}
 	}
 
 	// .slider-why__button-prev
 	&__button-prev {
+		& svg {
+			transform: rotate(-90deg);
+		}
+	}
+
+	// .slider-why__button-next, .slider-why__button-prev
+	&__button-next,
+	&__button-prev {
+		& svg {
+			stroke: $neutral-grey-8;
+		}
 	}
 
 	// .slider-why__pagination

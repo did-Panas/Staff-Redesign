@@ -894,57 +894,6 @@
 	}
 }
 
-// === Swiper-Pagination-Progressbar ======
-
-.swiper-pagination {
-	position: absolute;
-	text-align: center;
-	transition: 0.3s opacity;
-	transform: translate3d(0, 0, 0);
-	z-index: 10;
-}
-.swiper-pagination.swiper-pagination-hidden {
-	opacity: 0;
-}
-.swiper-pagination-progressbar {
-	background: $neutral-white-5;
-	position: absolute;
-}
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-	background: $accentColor;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	transform: scale(0);
-	transform-origin: left top;
-}
-.swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-	transform-origin: right top;
-}
-.swiper-horizontal > .swiper-pagination-progressbar,
-.swiper-pagination-progressbar.swiper-pagination-horizontal,
-.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
-.swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
-	width: 100%;
-	height: 2px;
-	left: 0;
-	top: 0;
-}
-.swiper-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
-.swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,
-.swiper-pagination-progressbar.swiper-pagination-vertical,
-.swiper-vertical > .swiper-pagination-progressbar {
-	width: 4px;
-	height: 100%;
-	left: 0;
-	top: 0;
-}
-.swiper-pagination-lock {
-	display: none;
-}
-
 // =============================================== >>> PORTFOLIO - section =====
 
 // ===== STUDIES - section >>> ================================================
