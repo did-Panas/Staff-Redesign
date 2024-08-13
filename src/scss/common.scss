@@ -58,7 +58,7 @@
 	}
 
 	&--h3-lg {
-		font-size: toRem(28);
+		@include adaptiveValue("font-size", 28, 19, 0, 1200, 380);
 		line-height: 107%;
 	}
 
