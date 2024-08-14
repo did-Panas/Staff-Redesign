@@ -305,5 +305,7 @@ body {
 	}
 	// .page-about__explore
 	&__explore {
+		margin-bottom: toRem(100);
+		padding: toRem(60) toRem(0) toRem(137);
 	}
 }

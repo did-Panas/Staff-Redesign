@@ -402,7 +402,7 @@
 
 		background-image: image-set(
 			url("@img/about-us/why/why-glare-mask@2x.png") 2x,
-			url("@img/about-us/why/why-glare-mask@2x.png") 1x
+			url("@img/about-us/why/why-glare-mask@1x.png") 1x
 		);
 		background-position: center center; /* x y */
 		background-size: cover;
@@ -658,6 +658,10 @@
 
 	// .explore__title
 	&__title {
+		max-width: toRem(927);
+		margin: 0 auto toRem(19);
+
+		text-align: center;
 	}
 
 	// .explore__body
@@ -672,36 +676,126 @@
 .explore-tabs {
 	// .explore-tabs__navigation
 	&__navigation {
+		display: flex;
+		gap: toRem(20);
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		max-width: toRem(768);
+		margin: 0 auto toRem(71);
+
+		@media (max-width: em(729.98)) {
+			justify-content: center;
+		}
 	}
 
 	// .explore-tabs__title
 	&__title {
+		color: $contrast-2;
+
+		font-family: "Proxima Nova", sans-serif;
+		font-weight: 700;
+		line-height: 122.222222%; /* 22/18 */
+
+		transition: color 0.4s ease 0s;
+
+		&._tab-active {
+			color: $accentColor;
+		}
 	}
 
 	// .explore-tabs__content
 	&__content {
+		max-width: toRem(900);
+		height: toRem(386);
+		margin: 0 auto;
+
+		background-image: url("@img/about-us/explore/map.svg");
+		background-position: center center; /* x y */
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	// .explore-tabs__body
 	&__body {
+		height: 100%;
+	}
+
+	//.explore-tabs__item-wrapper
+	&__item-wrapper {
+		display: grid;
+		grid-template-columns: auto 1fr 1fr 1fr;
+		gap: toRem(50);
+
+		height: 100%;
 	}
 
 	// .explore-tabs__map
 	&__map {
+		align-self: center;
+		justify-self: end;
+
+		// .explore-tabs__map_s-e-asia
+		&_s-e-asia {
+			grid-column: 4 / -1;
+		}
+
+		// .explore-tabs__map_s-amer
+		&_s-amer {
+			grid-column: 2 / 3;
+		}
+
+		// .explore-tabs__map_es-eur
+		&_es-eur {
+			grid-column: 3 / 4;
+		}
+
+		// .explore-tabs__map_mid-east
+		&_mid-east {
+			grid-column: 3 / 4;
+		}
+
+		// .explore-tabs__map_afr
+		&_afr {
+			grid-column: 3 / 4;
+		}
+
+		// .explore-tabs__map_india
+		&_india {
+			grid-column: 3 / 4;
+		}
 	}
 }
 
 .country-list {
+	align-self: end;
+	justify-self: end;
+
+	display: grid;
+	gap: toRem(15);
+
 	// .country-list__item
 	&__item {
+		& figure {
+			display: flex;
+			gap: toRem(9);
+			align-items: center;
+		}
 	}
 
 	// .country-list__flag
 	&__flag {
+		aspect-ratio: 1 / 1;
+		width: toRem(20);
 	}
 
 	// .country-list__name
 	&__name {
+		color: $contrast-2;
+
+		font-size: toRem(14);
+		font-weight: 500;
+		line-height: 150%; /* 21/14 */
 	}
 }
 
