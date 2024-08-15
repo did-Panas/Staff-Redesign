@@ -309,4 +309,7 @@ body {
 		padding-bottom: toRem(137);
 		@include adaptiveValue("padding-top", 60, 30, 0, 991, 500);
 	}
+	// .page-about__how
+	&__how {
+	}
 }

@@ -737,7 +737,7 @@
 	//.explore-tabs__item-wrapper
 	&__item-wrapper {
 		display: grid;
-
+		grid-template: auto / auto 1fr 1fr 1fr;
 		gap: toRem(50);
 
 		height: 100%;
@@ -850,3 +850,93 @@
 }
 
 // ==================================================== >>> WHY - section =====
+
+// ===== HOW - section >>> ====================================================
+
+.how {
+	// .how__top
+	&__top {
+	}
+
+	// .how__container
+	&__container {
+	}
+
+	// .how__title
+	&__title {
+	}
+
+	// .how__subtitle
+	&__subtitle {
+	}
+
+	// .how__body
+	&__body {
+	}
+
+	// .how__slider
+	&__slider {
+	}
+
+	// .how__slider-ctrl-panel
+	&__slider-ctrl-panel {
+	}
+}
+
+.slider-how {
+	// .slider-how__slider
+	&__slider {
+	}
+
+	// .slider-how__wrapper
+	&__wrapper {
+	}
+
+	// .slider-how__slide
+	&__slide {
+	}
+
+	// .slider-how__container
+	&__container {
+	}
+
+	// .slider-how__ctrl-panel-wrapper
+	&__ctrl-panel-wrapper {
+	}
+
+	// .slider-how__pagination
+	&__pagination {
+	}
+
+	// .slider-how__btns
+	&__btns {
+	}
+
+	// .slider-how__button-prev
+	&__button-prev {
+	}
+
+	// .slider-how__button-next
+	&__button-next {
+	}
+}
+
+.slide-how {
+	// .slide-how__body
+	&__body {
+	}
+
+	// .slide-how__num
+	&__num {
+	}
+
+	// .slide-how__title
+	&__title {
+	}
+
+	// .slide-how__txt
+	&__txt {
+	}
+}
+
+// ==================================================== >>> HOW - section =====
