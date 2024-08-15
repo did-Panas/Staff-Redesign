@@ -306,6 +306,7 @@ body {
 	// .page-about__explore
 	&__explore {
 		margin-bottom: toRem(100);
-		padding: toRem(60) toRem(0) toRem(137);
+		padding-bottom: toRem(137);
+		@include adaptiveValue("padding-top", 60, 30, 0, 991, 500);
 	}
 }
