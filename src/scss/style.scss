@@ -311,5 +311,7 @@ body {
 	}
 	// .page-about__how
 	&__how {
+		padding-top: toRem(70);
+		margin-bottom: toRem(137);
 	}
 }
