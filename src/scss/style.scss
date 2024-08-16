@@ -305,13 +305,13 @@ body {
 	}
 	// .page-about__explore
 	&__explore {
-		margin-bottom: toRem(100);
-		padding-bottom: toRem(137);
+		@include adaptiveValue("margin-bottom", 100, 30, 0, 1200, 500);
+		@include adaptiveValue("padding-bottom", 137, 30, 0, 991, 500);
 		@include adaptiveValue("padding-top", 60, 30, 0, 991, 500);
 	}
 	// .page-about__how
 	&__how {
-		padding-top: toRem(70);
 		margin-bottom: toRem(137);
+		@include adaptiveValue("padding-top", 70, 40, 0, 1200, 500);
 	}
 }

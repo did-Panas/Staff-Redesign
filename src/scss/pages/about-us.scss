@@ -856,7 +856,7 @@
 .how {
 	// .how__top
 	&__top {
-		margin-bottom: toRem(60);
+		@include adaptiveValue("margin-bottom", 60, 50, 0, 991, 500);
 		text-align: center;
 	}
 
@@ -881,13 +881,17 @@
 		grid-template-columns: toRem(15) 1fr minmax(auto, toRem(1072)) 1fr toRem(15);
 
 		margin-bottom: toRem(26);
+
+		@media (max-width: $mobileSmall) {
+			margin-bottom: toRem(40);
+		}
 	}
 
 	// .how__slider
 	&__slider {
-		grid-column: 1 / 6;
+		grid-column: 2 / 5;
 
-		@media (min-width: $mobile) {
+		@media (min-width: em(679)) {
 			grid-column: 3 / 6;
 		}
 	}
@@ -932,6 +936,11 @@
 		gap: toRem(47);
 
 		@include adaptiveValue("margin-left", 73, 0, 0, 1250, 1100);
+
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
+			gap: toRem(40);
+		}
 	}
 
 	// .slider-how__pagination
@@ -943,6 +952,12 @@
 	&__btns {
 		display: flex;
 		gap: toRem(25);
+
+		@media (max-width: $mobileSmall) {
+			justify-content: space-between;
+
+			width: 100%;
+		}
 	}
 
 	// .slider-how__button-prev
@@ -981,6 +996,10 @@
 			background-color: $neutral-white-1;
 			top: 0;
 			left: calc(85px - 100%);
+
+			@media (max-width: $mobileSmall) {
+				left: calc(50px - 100%);
+			}
 		}
 	}
 
@@ -994,6 +1013,10 @@
 			background-color: $neutral-white-1;
 			top: 0;
 			left: toRem(85);
+
+			@media (max-width: $mobileSmall) {
+				left: toRem(50);
+			}
 		}
 	}
 
@@ -1013,6 +1036,10 @@
 		color: $neutral-white-1;
 		border-radius: toRem(11);
 		background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 82.293%);
+
+		@media (max-width: $mobileSmall) {
+			padding: toRem(20) toRem(15) toRem(30);
+		}
 
 		&::before {
 			content: "";
@@ -1048,9 +1075,22 @@
 		color: $neutral-white-1;
 
 		font-family: "Proxima Nova", sans-serif;
-		font-size: toRem(37);
+		@include adaptiveValue("font-size", 37, 28, 0, 1200, 380);
 		font-weight: 900;
 		line-height: 121%;
+
+		@media (max-width: em(1200)) {
+			font-weight: 800;
+		}
+
+		@media (max-width: $tablet) {
+			font-weight: 700;
+		}
+
+		@media (max-width: $mobileSmall) {
+			width: toRem(60);
+			height: toRem(60);
+		}
 
 		&::before {
 			content: "";
