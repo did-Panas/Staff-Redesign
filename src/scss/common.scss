@@ -63,7 +63,7 @@
 	}
 
 	&--h3-xlg {
-		font-size: toRem(30);
+		@include adaptiveValue("font-size", 30, 22, 0, 1200, 380);
 	}
 
 	&--h1,

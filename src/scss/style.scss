@@ -316,5 +316,7 @@ body {
 	}
 	// .page-about__team
 	&__team {
+		@include adaptiveValue("padding-bottom", 233, 100, 0, 1200, 500);
+		@include adaptiveValue("padding-top", 151, 80, 0, 1200, 500);
 	}
 }

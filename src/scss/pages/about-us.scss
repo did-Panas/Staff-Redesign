@@ -1128,16 +1128,41 @@
 // ===== TEAM - section >>> ===================================================
 
 .team {
+	position: relative;
+
+	background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 81.498%);
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		inset: 0;
+
+		background-image: image-set(
+			url("@img/about-us/team/glare-mask@2x.png") 2x,
+			url("@img/about-us/team/glare-mask@1x.png") 1x
+		);
+		background-position: center center; /* x y */
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
 	// .team__container
 	&__container {
+		position: relative;
 	}
 
 	// .team__top
 	&__top {
+		max-width: toRem(585);
+		margin: 0 auto toRem(52);
+		text-align: center;
 	}
 
 	// .team__title
 	&__title {
+		margin-bottom: toRem(17);
 	}
 
 	// .team__txt
@@ -1145,8 +1170,25 @@
 		line-height: 150%; /* 24/16 */
 	}
 
+	&__title,
+	&__txt {
+		color: $neutral-white-1;
+	}
+
 	// .team__body
 	&__body {
+		display: grid;
+		grid-column-gap: toRem(26);
+		grid-row-gap: toRem(29);
+		grid-template-columns: repeat(auto-fit, minmax(toRem(330), 1fr));
+
+		max-width: toRem(1045);
+		margin: 0 auto;
+
+		@media (max-width: em(1099.98)) {
+			grid-column-gap: toRem(15);
+			grid-template-columns: repeat(auto-fit, minmax(toRem(220), 1fr));
+		}
 	}
 
 	// .team__card
@@ -1155,24 +1197,100 @@
 }
 
 .card-team {
+	position: relative;
+
+	@include adaptiveValue("height", 391, 300, 0, 991, 500);
+	padding: toRem(27) toRem(15);
+
+	border-radius: toRem(8);
+	text-transform: uppercase;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		inset: 0;
+
+		background-image: image-set(
+			url("@img/about-us/team/glare-mask-card@2x.png") 2x,
+			url("@img/about-us/team/glare-mask-card@1x.png") 1x
+		);
+		background-position: center center; /* x y */
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	// .card-team__content
+	&__content {
+		position: relative;
+
+		display: grid;
+		justify-content: center;
+		text-align: center;
+	}
+
 	// .card-team__name
 	&__name {
+		color: $neutral-white-1;
 	}
 
 	// .card-team__position
 	&__position {
+		max-width: 100%;
+		margin-bottom: toRem(8);
+
+		color: $accentColor;
+
+		font-size: toRem(12);
+		font-weight: 500;
+		line-height: 200%; /* 24/12 */
 	}
 
 	// .card-team__name-back
 	&__name-back {
+		color: transparent;
+		-webkit-text-stroke: 0.75px rgba(255, 255, 255, 0.17);
+		text-stroke: 0.75px white;
+
+		font-family: "Proxima Nova", sans-serif;
+		@include adaptiveValue("font-size", 96, 50, 0, 1200, 380);
+		font-weight: 900;
+		line-height: 77%;
 	}
 
 	// .card-team__photo
 	&__photo {
+		position: absolute;
+		z-index: 10;
+		bottom: toRem(-1);
+		right: 50%;
+		transform: translate(50%, 0);
+		aspect-ratio: 335 / 291;
+		height: 74.424552%; /* 291/391 */
+
+		& img {
+			object-position: center top;
+		}
 	}
 
 	// .card-team__flag
 	&__flag {
+		position: absolute;
+		z-index: 15;
+		bottom: 4.603581%; /* 18/391 */
+		left: 6.268657%; /* 21/335 */
+		aspect-ratio: 35 / 35;
+		width: 10.447761%; /* 35/335 */
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+
+		outline: 1.5px solid rgb(255, 255, 255);
+		border-radius: 50%;
 	}
 }
 
