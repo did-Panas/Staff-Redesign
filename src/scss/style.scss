@@ -314,4 +314,7 @@ body {
 		margin-bottom: toRem(137);
 		@include adaptiveValue("padding-top", 70, 40, 0, 1200, 500);
 	}
+	// .page-about__team
+	&__team {
+	}
 }

@@ -1111,6 +1111,8 @@
 	// .slide-how__txt
 	&__txt {
 		grid-column: 1 / -1;
+
+		line-height: 150%; /* 24/16 */
 	}
 
 	&__body,
@@ -1122,3 +1124,56 @@
 }
 
 // ==================================================== >>> HOW - section =====
+
+// ===== TEAM - section >>> ===================================================
+
+.team {
+	// .team__container
+	&__container {
+	}
+
+	// .team__top
+	&__top {
+	}
+
+	// .team__title
+	&__title {
+	}
+
+	// .team__txt
+	&__txt {
+		line-height: 150%; /* 24/16 */
+	}
+
+	// .team__body
+	&__body {
+	}
+
+	// .team__card
+	&__card {
+	}
+}
+
+.card-team {
+	// .card-team__name
+	&__name {
+	}
+
+	// .card-team__position
+	&__position {
+	}
+
+	// .card-team__name-back
+	&__name-back {
+	}
+
+	// .card-team__photo
+	&__photo {
+	}
+
+	// .card-team__flag
+	&__flag {
+	}
+}
+
+// =================================================== >>> TEAM - section =====
