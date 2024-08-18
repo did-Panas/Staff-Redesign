@@ -17,7 +17,6 @@
 	}
 
 	&--h1 {
-		font-size: toRem(48);
 		@include adaptiveValue("font-size", 48, 26, 0, 1440, 380);
 
 		line-height: 107%;

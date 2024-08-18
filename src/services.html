@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Services"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{
+		"link01":"menu__link-active",
+		"link02":"menu__link-disabled",
+		"link03":"menu__link-active",
+		"link04":"menu__link-active",
+		"link05":"menu__link-active",
+		"link06":"menu__link-active"
+		})
+		<main class="page-services">
+
+			<section class="page-services__hero hero-serv">
+				<div class="hero-serv__container">
+					<div class="hero-serv__wrapper">
+						<div class="hero-serv__content">
+
+							<h1 class="hero-serv__title title title--h1">
+								Unparalleled Access to
+								<span>Creative Professionals</span>
+							</h1>
+							<p class="hero-serv__subtitle title title--h3-sm">
+								ACROSS 35 INTERNATIONAL TALENT MARKETS
+							</p>
+
+
+						</div>
+						<div class="hero-serv__decor">
+
+							<div class="hero-serv__image-sm">
+								<img src="@img/services/hero/image-decor-sm.svg" alt="Image">
+							</div>
+							<div class="hero-serv__image">
+								<img src="@img/services/hero/image-decor.svg" alt="Image">
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+
+			@@include('html/blocks/_form-block.htm',{})
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
