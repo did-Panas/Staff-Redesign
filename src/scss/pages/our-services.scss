@@ -24,10 +24,10 @@
 	// .our-services__body
 	&__body {
 		margin-bottom: toRem(65);
-
 		padding: toRem(45) toRem(15) toRem(52);
 
 		background: linear-gradient(133.24deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 80.494%);
+		overflow: hidden;
 
 		@media (min-width: $tablet) {
 			padding: toRem(60) toRem(60) toRem(67);

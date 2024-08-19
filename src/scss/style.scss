@@ -272,6 +272,7 @@ body {
 	// === SERVICES - PAGE ===========================
 	// .page__our-services
 	&__our-services {
+		padding-top: toRem(100);
 		margin-bottom: toRem(65);
 	}
 }
@@ -325,7 +326,10 @@ body {
 .page-services {
 	// .page-services__hero
 	&__hero {
-		margin-bottom: toRem(100);
 		@include adaptiveValue("margin-top", 93, 15, 0, 991, 650);
+		@include adaptiveValue("margin-bottom", 100, 50, 0, 991, 650);
+	}
+	// .page-services__managed-serv
+	&__managed-serv {
 	}
 }
