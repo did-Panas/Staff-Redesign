@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs, EffectFade } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -426,6 +426,96 @@ function initSliders() {
 	}
 
 	// ================================================================= >>>SLIDER-HOW =====
+
+	// ===== SLIDER-SERVICES-MSERV =========================================================
+
+	if (document.querySelector('.slider-mserv__slider')) { // Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.slider-mserv__slider', { // Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation, Pagination, Thumbs, EffectFade],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 15,
+			autoHeight: true,
+			speed: 300,
+
+
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true,
+			},
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+
+			/*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			thumbs: {
+				swiper: {
+					el: '.slider-mserv-thumbs__slider',
+					slidesPerView: 'auto',
+					spaceBetween: 20,
+					direction: "vertical",
+				}
+			},
+
+			// Пагінація
+
+			pagination: {
+				el: '.slider-mserv__pagination',
+				type: "progressbar",
+				progressbarOpposite: 'true',
+			},
+
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.slider-mserv__button-prev',
+				nextEl: '.slider-mserv__button-next',
+			},
+
+			/*
+			// Брейкпоінти
+			breakpoints: {
+				320: {
+					
+				},
+				650: {
+					
+				},
+			},
+			*/
+
+			// Події
+			on: {
+
+			}
+		});
+	}
+
+	// ====================================================== >>>SLIDER-SERVICES-MSERV =====
 }
 
 // Button's link changing after active slide changing
