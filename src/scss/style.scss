@@ -335,4 +335,7 @@ body {
 		@include adaptiveValue("padding-top", 116, 60, 0, 1200, 650);
 		@include adaptiveValue("padding-bottom", 144, 80, 0, 1200, 650);
 	}
+	// .page-services__info
+	&__info {
+	}
 }
