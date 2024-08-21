@@ -37,10 +37,33 @@
 	// .hero-serv__title
 	&__title {
 		margin-bottom: toRem(17);
+
+		// Animation
+		opacity: 0;
+		transform: translate(0, toRem(20));
+
+		&._watcher-view {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				transform 1s ease 0.3s,
+				opacity 1s ease 0.3s;
+		}
 	}
 
 	// .hero-serv__subtitle
 	&__subtitle {
+		// Animation
+		opacity: 0;
+		transform: translate(0, toRem(20));
+
+		&._watcher-view {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				transform 1s ease 0.3s,
+				opacity 1s ease 0.7s;
+		}
 	}
 
 	// .hero-serv__decor
@@ -59,6 +82,15 @@
 
 	// .hero-serv__image-sm
 	&__image-sm {
+		// Animation
+		transform-origin: left bottom;
+		transform: rotate(-90deg);
+
+		&._watcher-view {
+			transform: rotate(0deg);
+			transition: transform 0.8s ease-out 0.5s;
+		}
+
 		& img {
 			width: 100%;
 		}
@@ -67,6 +99,19 @@
 	// .hero-serv__image
 	&__image {
 		transform: translate(toRem(11), 0);
+
+		// Animation
+		transform-origin: right bottom;
+		transform: scale(0.2);
+		opacity: 0;
+
+		&._watcher-view {
+			transform: scale(1);
+			opacity: 1;
+			transition:
+				transform 0.8s ease-out 0.7s,
+				opacity 0.8s ease-out 0.7s;
+		}
 
 		& img {
 			width: 100%;
@@ -305,6 +350,13 @@
 }
 
 .serv-article {
+	&:last-child {
+		& .serv-article__image {
+			@media (max-width: em(499.98)) {
+				grid-row: 1 / 2;
+			}
+		}
+	}
 	// .serv-article__container
 	&__container {
 	}
