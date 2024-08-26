@@ -208,6 +208,18 @@
 
 	// .slider-mserv-thumbs__slide
 	&__slide {
+		&:not(.swiper-slide-thumb-active) {
+			cursor: pointer;
+
+			@media (any-hover: hover) {
+				&:hover {
+					& p {
+						color: $neutral-grey-6;
+					}
+				}
+			}
+		}
+
 		& p {
 			text-wrap: nowrap;
 
@@ -220,6 +232,8 @@
 			font-weight: 700;
 			line-height: 121%;
 			text-transform: uppercase;
+
+			transition: color 0.3s ease 0s;
 
 			@media (max-width: $tablet) {
 				font-size: toRem(20);
