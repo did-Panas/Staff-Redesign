@@ -13,7 +13,7 @@
 	}
 
 	&--lg {
-		font-size: toRem(52);
+		@include adaptiveValue("font-size", 52, 27, 0, 1440, 380);
 	}
 
 	&--h1 {

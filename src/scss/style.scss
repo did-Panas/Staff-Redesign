@@ -30,6 +30,7 @@ $neutral-white-3: #f4efff;
 $neutral-white-4: #ededed;
 $neutral-white-5: #e2e2e2;
 $neutral-white-6: #fcfcfc;
+$neutral-white-7: #f2f2f2;
 $neutral-grey-1: #b0b0b0;
 $neutral-grey-2: #8c8d94;
 $neutral-grey-3: #777;
@@ -176,6 +177,7 @@ body {
 @import "home";
 @import "pages/about-us";
 @import "pages/services";
+@import "pages/portfolio";
 
 // ==================== PAGE ===========================
 
@@ -346,5 +348,12 @@ body {
 .page-portf {
 	// .page-portf__hero
 	&__hero {
+		@include adaptiveValue("margin-top", 65, 35, 0, 1200, 650);
+		margin-bottom: toRem(50);
+	}
+
+	& .advantages {
+		padding-top: toRem(44);
+		@include adaptiveValue("margin-bottom", 118, 65, 0, 1200, 650);
 	}
 }
