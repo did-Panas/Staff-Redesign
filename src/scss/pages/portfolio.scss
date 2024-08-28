@@ -60,7 +60,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				background-color: rgba(255, 90, 87, 0.147);
+				background-color: rgba(255, 90, 87, 0.1);
 				border-color: $accentColor;
 			}
 		}
@@ -100,6 +100,13 @@
 
 	// .gallery-portf__item
 	&__item {
+		@media (any-hover: hover) {
+			&:hover {
+				& .gallery-portf__image img {
+					transform: scale(1.1);
+				}
+			}
+		}
 	}
 
 	// .gallery-portf__image
@@ -108,6 +115,11 @@
 
 		overflow: hidden;
 		border-radius: toRem(8);
+
+		& img {
+			transform: scale(1);
+			transition: transform 0.3s ease 0s;
+		}
 	}
 }
 
