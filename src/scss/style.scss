@@ -357,3 +357,11 @@ body {
 		@include adaptiveValue("margin-bottom", 118, 65, 0, 1200, 650);
 	}
 }
+
+// ==================== STUDIES ======================
+
+.page-studies {
+	// .page-studies__hero
+	&__hero {
+	}
+}
