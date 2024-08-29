@@ -164,16 +164,22 @@
 // ===== CALL - section >>> ===================================================
 
 .studies-call {
+	background-color: $neutral-white-2;
+
 	//.studies-call__container
 	&__container {
+		text-align: center;
 	}
 
 	// .studies-call__title
 	&__title {
+		margin-bottom: toRem(14);
 	}
 
 	// .studies-call__txt
 	&__txt {
+		max-width: toRem(720);
+		margin: 0 auto toRem(26);
 	}
 
 	// .studies-call__btn

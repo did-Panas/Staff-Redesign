@@ -365,9 +365,11 @@ body {
 	// .page-studies__hero
 	&__hero {
 		@include adaptiveValue("padding-top", 64, 35, 0, 1200, 650);
-		margin-bottom: toRem(87);
+		@include adaptiveValue("margin-bottom", 87, 55, 0, 1200, 650);
 	}
 	// .page-studies__call
 	&__call {
+		@include adaptiveValue("padding-top", 100, 65, 0, 1200, 650);
+		padding-bottom: toRem(73);
 	}
 }
