@@ -10,6 +10,18 @@
 		max-width: 750px;
 		margin: 0 auto toRem(38);
 		text-align: center;
+
+		// Animation
+		opacity: 0;
+		transform: translate(toRem(20), 0);
+
+		&._watcher-view {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				transform 1s ease 0.3s,
+				opacity 1s ease 0.3s;
+		}
 	}
 
 	// .hero-portf__content
@@ -29,6 +41,18 @@
 
 		max-width: toRem(1020);
 		margin: 0 auto toRem(51);
+
+		// Animation
+		opacity: 0;
+		transform: translate(toRem(-40), 0);
+
+		&._watcher-view {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				transform 1s ease 0.7s,
+				opacity 1s ease 0.7s;
+		}
 	}
 
 	// .portf-tabs__title
