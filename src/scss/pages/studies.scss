@@ -7,32 +7,155 @@
 
 	// .hero-studies__title
 	&__title {
+		@include adaptiveValue("margin-bottom", 63, 40, 0, 700, 500);
+		text-align: center;
 	}
 
 	// .hero-studies__articles
 	&__articles {
+		display: grid;
+		grid-template: 1fr auto / repeat(3, 1fr);
+		grid-column-gap: toRem(24);
+		grid-row-gap: toRem(63);
+
+		max-width: toRem(1074);
+		margin: 0 auto;
+
+		@media (max-width: $tablet) {
+			grid-column-gap: toRem(15);
+			grid-row-gap: toRem(35);
+		}
+
+		@media (max-width: em(699.98)) {
+			grid-template: auto auto / repeat(2, 1fr);
+			grid-row-gap: toRem(63);
+		}
+
+		@media (max-width: em(449.98)) {
+			grid-template: auto auto / 1fr;
+		}
 	}
 }
 
 .article {
+	display: flex;
+	flex-direction: column;
+	gap: toRem(34);
+
+	@media (max-width: em(449.98)) {
+		align-items: center;
+	}
+
+	// .article_full-width
+	&_full-width {
+		@media (min-width: $tablet) {
+			gap: toRem(45);
+		}
+
+		@media (min-width: em(700)) {
+			grid-column: 1 / -1;
+			grid-row: 1 / 2;
+
+			flex-direction: row;
+		}
+
+		& .article__content {
+			@media (min-width: em(1100)) {
+				padding-right: toRem(22);
+			}
+
+			@media (min-width: em(700)) {
+				gap: toRem(14);
+				align-content: center;
+			}
+
+			@media (max-width: em(699.98)) {
+				flex: 1 1 auto;
+
+				grid-template: auto auto 1fr / 1fr;
+			}
+		}
+
+		& .article__image {
+			@media (min-width: em(700)) {
+				flex: 0 0 53%;
+
+				aspect-ratio: 545 / 378;
+			}
+		}
+
+		& .article__txt {
+			@media (min-width: em(700)) {
+				margin-top: toRem(5);
+			}
+		}
+
+		& .article__btn {
+			@media (min-width: em(700)) {
+				align-self: end;
+			}
+		}
+	}
+
+	&:not(.article_full-width) {
+		& .article__content {
+			flex: 1 1 auto;
+
+			grid-template: auto auto 1fr / 1fr;
+		}
+	}
+
 	// .article__image
 	&__image {
+		aspect-ratio: 340 / 378;
+		overflow: hidden;
+
+		border-radius: toRem(8);
+
+		@media (min-width: em(450)) {
+			max-height: toRem(378);
+		}
+
+		@media (max-width: em(449.98)) {
+			width: toRem(290);
+		}
 	}
 
 	// .article__content
 	&__content {
+		display: grid;
+		gap: toRem(13);
 	}
 
 	// .article__title
 	&__title {
+		line-height: 107%;
+
+		@media (max-width: $tablet) {
+			text-align: center;
+		}
 	}
 
 	// .article__txt
 	&__txt {
+		margin-bottom: toRem(6);
+
+		line-height: 150%; /* 24/16 */
+
+		@media (max-width: $tablet) {
+			text-align: justify;
+
+			margin-bottom: toRem(25);
+		}
 	}
 
 	// .article__btn
 	&__btn {
+		align-self: end;
+
+		@media (min-width: $tablet) {
+			justify-self: start;
+		}
 	}
 }
 
