@@ -179,6 +179,7 @@ body {
 @import "pages/services";
 @import "pages/portfolio";
 @import "pages/studies";
+@import "pages/blog";
 
 // ==================== PAGE ===========================
 
@@ -371,5 +372,13 @@ body {
 	&__call {
 		@include adaptiveValue("padding-top", 100, 65, 0, 1200, 650);
 		padding-bottom: toRem(73);
+	}
+}
+
+// ==================== BLOG ========================
+
+.page-blog {
+	// .page-blog__hero
+	&__hero {
 	}
 }

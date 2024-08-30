@@ -101,3 +101,37 @@
 		transition: all 0.3s ease 0s;
 	}
 }
+
+.button-tab {
+	@include adaptiveValue("padding-right", 19, 14, 0, 700, 400);
+	@include adaptiveValue("padding-top", 10, 8, 0, 700, 400);
+	@include adaptiveValue("padding-bottom", 10, 8, 0, 700, 400);
+	@include adaptiveValue("padding-left", 19, 14, 0, 700, 400);
+
+	background-color: transparent;
+	border: 1px solid $neutral-white-7;
+	border-radius: toRem(10);
+
+	font-family: "Proxima Nova", sans-serif;
+	@include adaptiveValue("font-size", 20, 15, 0, 700, 400);
+	font-weight: 500;
+	line-height: 121%;
+	text-transform: uppercase;
+
+	transition:
+		color 0.3s ease,
+		border-color 0.3s ease,
+		background-color 0.3s ease;
+
+	&._tab-active {
+		color: $accentColor;
+		border-color: $accentColor;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: rgba(255, 90, 87, 0.1);
+			border-color: $accentColor;
+		}
+	}
+}

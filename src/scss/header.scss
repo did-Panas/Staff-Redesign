@@ -220,11 +220,6 @@
 
 	// .menu__link
 	&__link {
-		&.menu__link-disabled {
-			pointer-events: none;
-			cursor: default;
-			color: $neutral-grey-1;
-		}
 	}
 
 	// .menu__btn
@@ -343,6 +338,12 @@
 			text-decoration: underline;
 			color: $accentColor;
 		}
+	}
+
+	&.menu__link-disabled {
+		pointer-events: none;
+		cursor: default;
+		color: $neutral-grey-1;
 	}
 }
 
