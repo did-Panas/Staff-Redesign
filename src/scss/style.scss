@@ -380,5 +380,7 @@ body {
 .page-blog {
 	// .page-blog__hero
 	&__hero {
+		margin-top: toRem(4);
+		margin-bottom: toRem(89);
 	}
 }
