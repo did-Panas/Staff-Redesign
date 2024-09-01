@@ -54,6 +54,7 @@
 
 	&--h3-sm {
 		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 16, 0, 1200, 380);
 	}
 
 	&--h3-lg {

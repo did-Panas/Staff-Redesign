@@ -445,15 +445,60 @@
 
 						</div>
 
-						<aside class="posts__latest posts-latest">
+						<aside data-showmore="items" class="posts__latest posts-latest">
 
 							<h2 class="posts-latest__title title title--h2-sm">
 								latest
 								<span>posts</span>
 							</h2>
 
-							<div class="posts-latest__items">
+							<div data-showmore-content="3" class="posts-latest__items">
 
+								<article class="latest-post">
+
+									<div class="latest-post__image latest-post__image-ibg">
+										<img src="@img/blog/latest/image-01@1x-2.jpeg" srcset="@img/blog/latest/image-01@2x-2.jpeg 2x" alt="Image">
+									</div>
+
+									<div class="latest-post__content">
+										<a href="#!" class="latest-post__category">design, photography</a>
+
+										<h3 class="latest-post__title title title--h3-sm">
+											<a href="#!">10 creative<br>designs ideas</a>
+										</h3>
+									</div>
+
+								</article>
+								<article class="latest-post">
+
+									<div class="latest-post__image latest-post__image-ibg">
+										<img src="@img/blog/latest/image-02@1x-1.jpeg" srcset="@img/blog/latest/image-02@2x-1.jpeg 2x" alt="Image">
+									</div>
+
+									<div class="latest-post__content">
+										<a href="#!" class="latest-post__category">design, photography</a>
+
+										<h3 class="latest-post__title title title--h3-sm">
+											<a href="#!">10 creative<br>designs ideas</a>
+										</h3>
+									</div>
+
+								</article>
+								<article class="latest-post">
+
+									<div class="latest-post__image latest-post__image-ibg">
+										<img src="@img/blog/latest/image-03@1x.jpeg" srcset="@img/blog/latest/image-03@2x.jpeg 2x" alt="Image">
+									</div>
+
+									<div class="latest-post__content">
+										<a href="#!" class="latest-post__category">design, photography</a>
+
+										<h3 class="latest-post__title title title--h3-sm">
+											<a href="#!">10 creative<br>designs ideas</a>
+										</h3>
+									</div>
+
+								</article>
 								<article class="latest-post">
 
 									<div class="latest-post__image latest-post__image-ibg">
@@ -502,9 +547,10 @@
 
 							</div>
 
-							<a href="#!1" class="posts-latest__btn button button--md">
-								Show More
-							</a>
+							<button hidden data-showmore-button type="button" class="posts-latest__btns">
+								<span class="posts-latest__btn button button--md">Show More</span>
+								<span>Close</span>
+							</button>
 
 						</aside>
 
