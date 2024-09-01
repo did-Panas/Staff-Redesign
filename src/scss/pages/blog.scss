@@ -26,6 +26,10 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 
+			// Animation
+			transform-origin: right bottom;
+			transform: scale(0.1);
+
 			@media (max-width: em(600)) {
 				width: 16%;
 			}
@@ -42,6 +46,10 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 
+			// Animation
+			transform-origin: left bottom;
+			transform: rotate(-90deg);
+
 			@media (min-width: $tablet) {
 				bottom: toRem(37);
 				right: toRem(-3);
@@ -56,6 +64,33 @@
 				width: 10%;
 			}
 		}
+
+		// Animation
+		&._watcher-view::after {
+			transform: rotate(0deg);
+			transition: transform 0.8s ease-out 0.5s;
+		}
+
+		&._watcher-view::before {
+			transform: scale(1);
+			transition: transform 0.8s ease-out 0.5s;
+		}
+
+		&._watcher-view .hero-blog__title {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				transform 1s ease 0.3s,
+				opacity 1s ease 0.3s;
+		}
+
+		&._watcher-view .hero-blog__txt {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				transform 1.3s ease 0.5s,
+				opacity 1.3s ease 0.7s;
+		}
 	}
 
 	// .hero-blog__title
@@ -65,6 +100,10 @@
 
 		@include adaptiveValue("padding-top", 60, 40, 0, 700, 400);
 		margin-bottom: toRem(23);
+
+		// Animation
+		opacity: 0;
+		transform: translate(0, toRem(20));
 	}
 
 	// .hero-blog__txt
@@ -75,6 +114,10 @@
 		max-width: toRem(835);
 		margin: 0 auto;
 		padding-bottom: toRem(65);
+
+		// Animation
+		opacity: 0;
+		transform: translate(0, toRem(20));
 	}
 
 	// .hero-blog__posts
