@@ -14,6 +14,8 @@
 
 	&--lg {
 		@include adaptiveValue("font-size", 52, 27, 0, 1440, 380);
+
+		line-height: 107%;
 	}
 
 	&--h1 {

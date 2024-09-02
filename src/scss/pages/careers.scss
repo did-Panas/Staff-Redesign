@@ -5,12 +5,72 @@
 	&__container {
 	}
 
+	// .hero-careers__body
+	&__body {
+		max-width: toRem(1074);
+		margin: 0 auto;
+	}
+
 	// .hero-careers__top
 	&__top {
+		position: relative;
+
+		margin-bottom: toRem(38);
+		padding: toRem(90) toRem(0) toRem(18);
+
+		text-align: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			aspect-ratio: 235 / 180;
+			width: 21.880819%; /* 235/1074 */
+			bottom: 0;
+			left: toRem(16);
+
+			background-image: url("@img/careers/decor-01.svg");
+			background-position: center center; /* x y */
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			@media (max-width: $tablet) {
+				left: 0;
+			}
+
+			@media (max-width: $mobile) {
+				width: 25%;
+				bottom: initial;
+				top: 0;
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			aspect-ratio: 290 / 252;
+			width: 27.001862%; /* 290/1074 */
+			bottom: toRem(-6);
+			right: toRem(-35);
+
+			background-image: url("@img/careers/decor-02.svg");
+			background-position: center center; /* x y */
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			@media (max-width: $mobile) {
+				width: 32%;
+				bottom: initial;
+				top: 0;
+			}
+		}
 	}
 
 	// .hero-careers__title
 	&__title {
+		position: relative;
+		z-index: 5;
+
+		margin-bottom: toRem(18);
 	}
 
 	// .hero-careers__subtitle
@@ -25,18 +85,88 @@
 .looking-for {
 	// .looking-for__list
 	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: toRem(25);
+
+		@media (max-width: $tablet) {
+			gap: toRem(15);
+		}
 	}
 
 	// .looking-for__item
 	&__item {
+		flex: 0 0 toRem(246);
+
+		position: relative;
+
+		padding: toRem(48) toRem(24) toRem(44);
+		text-align: center;
+
+		border-radius: toRem(7);
+		overflow: hidden;
+		box-shadow: 0px 2.66px 12.62px 0px rgba(179, 179, 179, 0.25);
+		background: rgb(255, 255, 255);
+
+		transition: all 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: linear-gradient(138.22deg, rgb(12, 8, 30) 0%, rgb(12, 5, 33) 89.308%);
+				box-shadow: none;
+
+				&::before {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					inset: 0;
+
+					background-image: image-set(
+						url("@img/careers/glares-mask@2x.png") 2x,
+						url("@img/careers/glares-mask@1x.png") 1x
+					);
+					background-position: center center; /* x y */
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+
+				& .looking-for__title {
+					color: $neutral-white-1;
+					transition: color 0.3s ease 0s;
+				}
+
+				& .looking-for__txt {
+					color: $neutral-grey-4;
+					transition: color 0.3s ease 0s;
+				}
+			}
+		}
 	}
 
 	// .looking-for__title
 	&__title {
+		position: relative;
+
+		margin-bottom: toRem(9);
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	// .looking-for__txt
 	&__txt {
+		position: relative;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 

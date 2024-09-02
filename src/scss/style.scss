@@ -180,6 +180,7 @@ body {
 @import "pages/portfolio";
 @import "pages/studies";
 @import "pages/blog";
+@import "pages/careers";
 
 // ==================== PAGE ===========================
 
@@ -390,5 +391,6 @@ body {
 .page-careers {
 	// .page-careers__hero
 	&__hero {
+		margin-bottom: toRem(30);
 	}
 }
