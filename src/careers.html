@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Case Studies"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{
+		"link01":"menu__link-active",
+		"link02":"menu__link-active",
+		"link03":"menu__link-active",
+		"link04":"menu__link-active",
+		"link05":"menu__link-disabled",
+		"link06":"menu__link-active"
+		})
+		<main class="page-careers">
+
+			<section class="page-careers__hero hero-careers">
+				<div class="hero-careers__container">
+
+					<div class="hero-careers__top">
+
+						<h1 class="hero-careers__title title title--lg">
+							Rockstars and<br>
+							<span>Ninjas Wanted</span>
+						</h1>
+						<h2 class="hero-careers__subtitle title title--h3-sm">
+							We are looking for:
+						</h2>
+
+					</div>
+					<div class="hero-careers__content looking-for">
+						<ul class="looking-for__list">
+
+							<li class="looking-for__item">
+								<h3 class="looking-for__title title title--h3-sm">
+									Self-starters
+								</h3>
+								<p class="looking-for__txt txt">
+									Professionals who are proactive and who don;t just wait for opportunities - they create them.
+								</p>
+							</li>
+							<li class="looking-for__item">
+								<h3 class="looking-for__title title title--h3-sm">
+									Self-motivated individuals
+								</h3>
+								<p class="looking-for__txt txt">
+									Professionals who realize we’re playing in a whole new level and who bring their A-game every single day.
+								</p>
+							</li>
+							<li class="looking-for__item">
+								<h3 class="looking-for__title title title--h3-sm">
+									Over-achievers
+								</h3>
+								<p class="looking-for__txt txt">
+									Professionals who never settle for good enough and who consider excellence as the norm of doing things.
+								</p>
+							</li>
+							<li class="looking-for__item">
+								<h3 class="looking-for__title title title--h3-sm">
+									Grown-ups
+								</h3>
+								<p class="looking-for__txt txt">
+									Professionals who do not need to be supervised and who know and understand what is expected of them.
+								</p>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+			<section hidden class="page-studies__call studies-call">
+				<div class="studies-call__container">
+
+					<h2 class="studies-call__title title title--h2">
+						It’s
+						<span>your turn.</span>
+					</h2>
+
+					<p class="studies-call__txt txt">
+						We’ve helped our clients achieve their growth goals time and again. And in most instances, we’ve consistently exceeded their expectations.Perhaps it’s time to see what kind of
+						results we can accomplish together.
+					</p>
+
+					<a href="#!1" class="studies-call__btn button button--md">
+						Let's Talk
+					</a>
+
+				</div>
+			</section>
+
+			@@include('html/blocks/_form-block.htm',{})
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
