@@ -35,6 +35,12 @@
 		@include adaptiveValue("font-size", 18, 17, 0, 991, 550);
 		font-weight: 500;
 		line-height: 142.52%;
+
+		.page-careers & {
+			text-transform: lowercase;
+			padding-right: toRem(34);
+			padding-left: toRem(34);
+		}
 	}
 
 	&--lg {

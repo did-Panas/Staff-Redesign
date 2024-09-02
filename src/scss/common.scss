@@ -298,3 +298,33 @@
 }
 
 // ====================== >>>>>>>>>>>>>>>>>>>>> Swiper-Pagination-Progressbar =======
+
+// ===== CALLING - section >>> ======================================================
+
+.calling {
+	//.calling__container
+	&__container {
+		text-align: center;
+	}
+
+	// .calling__title
+	&__title {
+		margin-bottom: toRem(14);
+	}
+
+	// .calling__txt
+	&__txt {
+		max-width: toRem(720);
+		margin: 0 auto toRem(26);
+	}
+
+	// .calling__btn
+	&__btn {
+	}
+
+	.page-studies & {
+		background-color: $neutral-white-2;
+	}
+}
+
+// ====================================================== >>> CALLING - section =====

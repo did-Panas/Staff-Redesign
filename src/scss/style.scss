@@ -393,4 +393,10 @@ body {
 	&__hero {
 		margin-bottom: toRem(30);
 	}
+
+	// .page-careers__call
+	&__call {
+		margin-bottom: toRem(40);
+		padding-top: toRem(33);
+	}
 }
