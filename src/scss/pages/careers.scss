@@ -33,6 +33,11 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 
+			// Animation
+			opacity: 0;
+			transform-origin: left top;
+			transform: scale(0.8) rotate(90deg);
+
 			@media (max-width: $tablet) {
 				left: 0;
 			}
@@ -57,10 +62,50 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 
+			// Animation
+			opacity: 0;
+			transform-origin: right bottom;
+			transform: scale(0.8) translate(toRem(80), toRem(80));
+
 			@media (max-width: $mobile) {
 				width: 32%;
 				bottom: initial;
 				top: 0;
+			}
+		}
+
+		// Animation
+		&._watcher-view {
+			& .hero-careers__title {
+				opacity: 1;
+				transform: scale(1) translate(0, 0);
+				transition:
+					transform 1s ease 0.3s,
+					opacity 1s ease 0.3s;
+			}
+
+			& .hero-careers__subtitle {
+				opacity: 1;
+				transform: scale(1) translate(0, 0);
+				transition:
+					transform 1s ease 0.7s,
+					opacity 1s ease 0.7s;
+			}
+
+			&::before {
+				opacity: 1;
+				transform: scale(1) rotate(0);
+				transition:
+					transform 1s ease 0.7s,
+					opacity 1s ease 0.7s;
+			}
+
+			&::after {
+				opacity: 1;
+				transform: scale(1) translate(0, 0);
+				transition:
+					transform 1s ease 0.7s,
+					opacity 1s ease 0.7s;
 			}
 		}
 	}
@@ -71,14 +116,23 @@
 		z-index: 5;
 
 		margin-bottom: toRem(18);
+
+		// Animation
+		opacity: 0;
+		transform: scale(1.1);
 	}
 
 	// .hero-careers__subtitle
 	&__subtitle {
+		// Animation
+		opacity: 0;
+		transform: scale(1.1) translate(0, toRem(30));
 	}
 
 	// .hero-careers__content
 	&__content {
+		position: relative;
+		z-index: 5;
 	}
 }
 
