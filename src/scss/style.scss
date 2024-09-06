@@ -181,6 +181,7 @@ body {
 @import "pages/studies";
 @import "pages/blog";
 @import "pages/careers";
+@import "pages/contact-us";
 
 // ==================== PAGE ===========================
 
@@ -404,5 +405,13 @@ body {
 	&__positions {
 		@include adaptiveValue("margin-bottom", 88, 75, 0, 991, 550);
 		padding-top: toRem(30);
+	}
+}
+
+// ==================== CONTACT-US ==================
+
+.page-contacts {
+	// .page-contacts__hero
+	&__hero {
 	}
 }

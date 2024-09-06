@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Career"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{
+		"link01":"menu__link-active",
+		"link02":"menu__link-active",
+		"link03":"menu__link-active",
+		"link04":"menu__link-active",
+		"link05":"menu__link-active",
+		"link06":"menu__link-disabled"
+		})
+		<main class="page-contacts">
+
+			<section class="page-contacts__hero hero-contacts">
+				<div class="hero-contacts__container">
+
+					<h1 class="hero-contacts__title title title--lg">
+						let’s make<br>
+						<span>something great togethers</span>
+					</h1>
+					<div class="hero-contacts__calling">
+
+						<article class="cont-call">
+
+							<div class="cont-call__image">
+								<img src="@img/contact-us/image-01.svg" alt="Image">
+							</div>
+							<div class="cont-call__content">
+
+								<h3 class="cont-call__title title title--h3-sm">
+									book a free<br>
+									<span>consultation</span>
+								</h3>
+								<p class="cont-call__txt txt">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+								</p>
+
+							</div>
+							<button type="button" class="cont-call__btn button button--md">Book A Call</button>
+
+
+						</article>
+						<article class="cont-call">
+
+							<div class="cont-call__image">
+								<img src="@img/contact-us/image-02.svg" alt="Image">
+							</div>
+							<div class="cont-call__content">
+
+								<h3 class="cont-call__title title title--h3-sm">
+									not ready yet?<br>
+									<span>message us!</span>
+								</h3>
+								<p class="cont-call__txt txt">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+								</p>
+
+							</div>
+							<button type="button" class="cont-call__btn button button--md">WRITE US!</button>
+
+						</article>
+
+					</div>
+
+				</div>
+			</section>
+
+
+
+			@@include('html/blocks/_form-block.htm',{})
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
