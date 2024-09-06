@@ -259,7 +259,10 @@
 	&__wrapper {
 		max-width: toRem(1074);
 		margin: 0 auto;
-		padding: toRem(60) toRem(55) toRem(50);
+		padding-bottom: toRem(51);
+		@include adaptiveValue("padding-top", 60, 45, 0, 1200, 767);
+		@include adaptiveValue("padding-right", 55, 15, 0, 1200, 767);
+		@include adaptiveValue("padding-left", 55, 15, 0, 1200, 767);
 
 		border: 1px solid rgb(199, 199, 199);
 		border-radius: toRem(10);
@@ -273,6 +276,15 @@
 		justify-content: center;
 
 		margin-bottom: toRem(24);
+
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(40);
+		}
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: toRem(15);
+		}
 	}
 
 	// .positions__title
@@ -285,14 +297,15 @@
 		justify-content: center;
 		align-items: center;
 
-		height: toRem(44);
-		padding: toRem(0) toRem(27);
+		@include adaptiveValue("height", 44, 33, 0, 1200, 767);
+		@include adaptiveValue("padding-right", 27, 20, 0, 1200, 767);
+		@include adaptiveValue("padding-left", 27, 20, 0, 1200, 767);
 
 		border-radius: toRem(8);
 		background: rgb(244, 244, 244);
 
 		font-family: "Proxima Nova", sans-serif;
-		font-size: toRem(20);
+		@include adaptiveValue("font-size", 20, 15, 0, 1200, 767);
 		line-height: 121%;
 
 		& span {
@@ -310,23 +323,35 @@
 	// .positions__list
 	&__list {
 		margin-bottom: toRem(53);
+
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(70);
+		}
 	}
 
 	// .positions__show-btn
 	&__show-btn {
 		text-align: center;
+
+		& a.button.button--md {
+			padding: toRem(8) toRem(32);
+
+			@include adaptiveValue("font-size", 18, 16, 0, 991, 550);
+		}
 	}
 }
 
 .filter-panel {
 	display: flex;
-	gap: toRem(23);
+	@include adaptiveValue("gap", 23, 20, 0, 1200, 767);
 	justify-content: center;
+	flex-wrap: wrap;
 
 	& .select {
+		min-width: min-content;
+
 		&__title {
-			min-width: auto;
-			height: toRem(49);
+			@include adaptiveValue("height", 49, 43, 0, 1200, 767);
 
 			border: 1px solid rgb(199, 199, 199);
 			border-radius: toRem(11);
@@ -358,6 +383,7 @@
 			overflow: visible;
 			text-overflow: ellipsis;
 
+			@include adaptiveValue("font-size", 18, 16, 0, 1200, 767);
 			font-weight: 500;
 			line-height: 142.52%;
 		}
@@ -366,8 +392,13 @@
 		}
 
 		&__option {
-			font-size: toRem(17);
+			@include adaptiveValue("font-size", 17, 16, 0, 1200, 767);
 			line-height: 120%;
+
+			@media (max-width: $tablet) {
+				padding-top: toRem(10);
+				padding-bottom: toRem(10);
+			}
 
 			@media (any-hover: hover) {
 				&:hover {
@@ -395,8 +426,8 @@
 		}
 
 		& input {
-			width: toRem(209);
-			height: toRem(49);
+			@include adaptiveValue("width", 209, 184, 0, 1200, 767);
+			@include adaptiveValue("height", 49, 43, 0, 1200, 767);
 			padding: toRem(8) toRem(15) toRem(8) toRem(61);
 
 			color: $neutral-grey-3;
@@ -417,6 +448,7 @@
 		& input::placeholder {
 			color: $mainColor;
 
+			@include adaptiveValue("font-size", 18, 16, 0, 1200, 767);
 			font-weight: 500;
 			line-height: 142%;
 		}
@@ -429,8 +461,12 @@
 
 .pos-card {
 	display: flex;
-	gap: toRem(50);
+	@include adaptiveValue("gap", 50, 30, 0, 991, 550);
 	justify-content: space-between;
+
+	@media (max-width: em(549.98)) {
+		flex-direction: column;
+	}
 
 	&:not(:last-child) {
 		margin-bottom: toRem(28);
@@ -441,17 +477,34 @@
 
 	// .pos-card__content
 	&__content {
+		@media (max-width: $mobileSmall) {
+			text-align: center;
+		}
 	}
 
 	// .pos-card__title
 	&__title {
 		margin-bottom: toRem(9);
+
+		& a:hover {
+			color: $mainColor;
+
+			transition: color 0.3s ease 0s;
+			@media (any-hover: hover) {
+				color: $accentColor;
+			}
+		}
 	}
 
 	// .pos-card__categories
 	&__categories {
 		display: flex;
 		gap: toRem(12);
+		flex-wrap: wrap;
+
+		@media (max-width: $mobileSmall) {
+			justify-content: center;
+		}
 	}
 
 	// .pos-card__category-item
@@ -460,7 +513,7 @@
 		justify-content: center;
 		align-items: center;
 
-		height: toRem(31);
+		@include adaptiveValue("height", 31, 26, 0, 1200, 500);
 		margin-bottom: toRem(17);
 		padding: 0 toRem(13);
 
@@ -468,7 +521,7 @@
 		border-radius: toRem(7);
 
 		font-family: "Proxima Nova", sans-serif;
-		font-size: toRem(14);
+		@include adaptiveValue("font-size", 14, 12, 0, 1200, 500);
 		font-weight: 500;
 		line-height: 121%;
 		text-transform: uppercase;
@@ -476,15 +529,35 @@
 
 	// .pos-card__txt
 	&__txt {
-		max-width: toRem(551);
+		display: inline-block;
+
+		max-width: toRem(535);
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	// .pos-card__btn
 	&__btn {
 		align-self: flex-end;
 
-		margin-bottom: toRem(5);
 		padding: 0 toRem(40);
+
+		@include adaptiveValue("font-size", 18, 15, 0, 991, 550);
+		white-space: nowrap;
+
+		@media (min-width: $mobile) {
+			margin-bottom: toRem(5);
+		}
+
+		@media (max-width: $mobileSmall) {
+			@include adaptiveValue("min-height", 50, 42, 0, 991, 550);
+			width: 100%;
+			margin: 0 auto;
+		}
 	}
 }
 

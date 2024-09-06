@@ -402,7 +402,7 @@ body {
 
 	// .page-careers__positions
 	&__positions {
-		margin-bottom: toRem(88);
+		@include adaptiveValue("margin-bottom", 88, 75, 0, 991, 550);
 		padding-top: toRem(30);
 	}
 }
