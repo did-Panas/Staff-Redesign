@@ -238,6 +238,16 @@
 
 // =================================================== >>> HERO - section =====
 
+// ===== CALLING - section >>> ================================================
+
+.page-careers__call .calling__btn {
+	text-transform: lowercase;
+	padding-right: toRem(34);
+	padding-left: toRem(34);
+}
+
+// ================================================= >>> CALLING - section =====
+
 // ===== POSITIONS - section >>> ==============================================
 
 .positions {
@@ -247,10 +257,22 @@
 
 	// .positions__wrapper
 	&__wrapper {
+		max-width: toRem(1074);
+		margin: 0 auto;
+		padding: toRem(60) toRem(55) toRem(50);
+
+		border: 1px solid rgb(199, 199, 199);
+		border-radius: toRem(10);
 	}
 
 	// .positions__top
 	&__top {
+		display: flex;
+		gap: toRem(25);
+		align-items: center;
+		justify-content: center;
+
+		margin-bottom: toRem(24);
 	}
 
 	// .positions__title
@@ -259,50 +281,210 @@
 
 	// .positions__info
 	&__info {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+
+		height: toRem(44);
+		padding: toRem(0) toRem(27);
+
+		border-radius: toRem(8);
+		background: rgb(244, 244, 244);
+
+		font-family: "Proxima Nova", sans-serif;
+		font-size: toRem(20);
+		line-height: 121%;
+
+		& span {
+			margin-right: toRem(7);
+
+			font-weight: 900;
+		}
 	}
 
 	// .positions__filter
 	&__filter {
+		margin-bottom: toRem(50);
 	}
 
 	// .positions__list
 	&__list {
+		margin-bottom: toRem(53);
 	}
 
 	// .positions__show-btn
 	&__show-btn {
+		text-align: center;
 	}
 }
 
 .filter-panel {
+	display: flex;
+	gap: toRem(23);
+	justify-content: center;
+
+	& .select {
+		&__title {
+			min-width: auto;
+			height: toRem(49);
+
+			border: 1px solid rgb(199, 199, 199);
+			border-radius: toRem(11);
+		}
+
+		&__value {
+			gap: toRem(15);
+
+			padding: toRem(0) toRem(32) toRem(0) toRem(22);
+
+			&::after {
+				content: "";
+				flex: 0 0 toRem(14);
+				height: toRem(7);
+				align-self: center;
+
+				background-image: url("@img/careers/arrow-down.svg");
+				background-position: center center; /* x y */
+				background-size: contain;
+				background-repeat: no-repeat;
+
+				._select-open & {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+
+		&__content {
+			overflow: visible;
+			text-overflow: ellipsis;
+
+			font-weight: 500;
+			line-height: 142.52%;
+		}
+
+		&__options {
+		}
+
+		&__option {
+			font-size: toRem(17);
+			line-height: 120%;
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: rgba(255, 90, 87, 0.1);
+					transition: all 0.3s ease 0s;
+				}
+			}
+		}
+	}
 	// .filter-panel__search
 	&__search {
+		position: relative;
+
+		& svg {
+			position: absolute;
+			z-index: 3;
+			top: 50%;
+			transform: translate(0, -50%);
+			left: toRem(22);
+
+			aspect-ratio: 1 / 1;
+			width: toRem(24);
+
+			fill: $mainColor;
+		}
+
+		& input {
+			width: toRem(209);
+			height: toRem(49);
+			padding: toRem(8) toRem(15) toRem(8) toRem(61);
+
+			color: $neutral-grey-3;
+			border: 1px solid rgb(199, 199, 199);
+			border-radius: toRem(11);
+
+			letter-spacing: 0.05rem;
+
+			&:focus {
+				border: 1px solid $accentColor;
+				outline: none;
+				border-radius: toRem(8);
+
+				background-color: rgba(255, 90, 87, 0.1);
+			}
+		}
+
+		& input::placeholder {
+			color: $mainColor;
+
+			font-weight: 500;
+			line-height: 142%;
+		}
+	}
+
+	// .filter-panel__select
+	&__select {
 	}
 }
 
 .pos-card {
+	display: flex;
+	gap: toRem(50);
+	justify-content: space-between;
+
+	&:not(:last-child) {
+		margin-bottom: toRem(28);
+		padding-bottom: toRem(23);
+
+		border-bottom: 1px solid $neutral-white-7;
+	}
+
 	// .pos-card__content
 	&__content {
 	}
 
 	// .pos-card__title
 	&__title {
+		margin-bottom: toRem(9);
 	}
 
 	// .pos-card__categories
 	&__categories {
+		display: flex;
+		gap: toRem(12);
 	}
 
 	// .pos-card__category-item
 	&__category-item {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+
+		height: toRem(31);
+		margin-bottom: toRem(17);
+		padding: 0 toRem(13);
+
+		border: 1px solid rgb(242, 242, 242);
+		border-radius: toRem(7);
+
+		font-family: "Proxima Nova", sans-serif;
+		font-size: toRem(14);
+		font-weight: 500;
+		line-height: 121%;
+		text-transform: uppercase;
 	}
 
 	// .pos-card__txt
 	&__txt {
+		max-width: toRem(551);
 	}
 
 	// .pos-card__btn
 	&__btn {
+		align-self: flex-end;
+
+		margin-bottom: toRem(5);
+		padding: 0 toRem(40);
 	}
 }
 
