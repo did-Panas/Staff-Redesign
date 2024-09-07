@@ -413,5 +413,7 @@ body {
 .page-contacts {
 	// .page-contacts__hero
 	&__hero {
+		margin-bottom: toRem(77);
+		padding-top: toRem(68);
 	}
 }

@@ -1,22 +1,92 @@
 // ===== HERO - section >>> ===================================================
 
 .hero-contacts {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 53.539254%; /* 416/777 */
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: $neutral-white-6;
+	}
 	// .hero-contacts__container
 	&__container {
 	}
 
+	// .hero-contacts__wrapper
+	&__wrapper {
+		position: relative;
+
+		max-width: toRem(1074);
+		margin: 0 auto;
+	}
+
 	// .hero-contacts__title
 	&__title {
+		margin-bottom: toRem(52);
+
+		text-align: center;
 	}
 
 	// .hero-contacts__calling
 	&__calling {
+		display: flex;
+		gap: toRem(27);
+
+		max-width: toRem(1074);
+		margin: 0 auto;
+
+		@media (max-width: $tablet) {
+			gap: toRem(15);
+		}
+
+		@media (max-width: em(650)) {
+			flex-direction: column;
+			align-items: center;
+			gap: toRem(30);
+		}
 	}
 }
 
 .cont-call {
+	flex: 1 1 auto;
+
+	max-width: toRem(525);
+	padding: toRem(45) toRem(30) toRem(56);
+
+	border-radius: toRem(7);
+	box-shadow: 0px 2.66px 12.62px 0px rgba(179, 179, 179, 0.25);
+	background: rgb(255, 255, 255);
+
+	@media (max-width: $mobile) {
+		padding: toRem(45) toRem(15) toRem(56);
+	}
+
+	// .cont-call__wrapper
+	&__wrapper {
+		display: grid;
+		grid-template-rows: auto auto 1fr;
+		grid-gap: toRem(20);
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+
+		height: 100%;
+		max-width: toRem(353);
+		margin: 0 auto;
+	}
+
 	// .cont-call__image
 	&__image {
+		justify-self: center;
+
+		aspect-ratio: 255 / 158;
+		width: 72.23796%; /* 255/353 */
+		margin-bottom: toRem(14);
 	}
 
 	// .cont-call__content
@@ -25,6 +95,7 @@
 
 	// .cont-call__title
 	&__title {
+		margin-bottom: toRem(14);
 	}
 
 	// .cont-call__txt
@@ -33,6 +104,8 @@
 
 	// .cont-call__btn
 	&__btn {
+		align-self: end;
+		justify-self: center;
 	}
 }
 
