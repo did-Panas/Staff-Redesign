@@ -56,6 +56,7 @@
 		// Animation >>>>>>>>>>>>>
 		&._watcher-view .cont-call {
 			opacity: 1;
+			transform: scale(1);
 			transform: translate(0, 0);
 			transition:
 				transform 1.5s ease 0.6s,
@@ -87,11 +88,12 @@
 
 	// Animation >>>>>>>>>>>>>
 	opacity: 0;
+
 	&:first-child {
-		transform: translate(-80%, 0);
+		transform: scale(0.7) translate(-80%, 0);
 	}
 	&:last-child {
-		transform: translate(80%, 0);
+		transform: scale(0.7) translate(80%, 0);
 	}
 
 	// >>>>>>>>>>>>> Animation
@@ -152,12 +154,47 @@
 	&__container {
 	}
 
+	// .location__wrapper
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+		grid-column-gap: toRem(27);
+		grid-row-gap: toRem(50);
+
+		max-width: toRem(1074);
+		margin: 0 auto;
+
+		@media (max-width: em(1199.98)) {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		}
+
+		@media (max-width: $tablet) {
+			grid-column-gap: toRem(15);
+		}
+
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	// .location__item
 	&__item {
 	}
 
 	// .location__map
 	&__map {
+		aspect-ratio: 530 / 327;
+		width: 100%;
+		margin-bottom: toRem(24);
+
+		border-radius: toRem(10);
+		box-shadow: 0px 4px 0px 0px rgba(231, 230, 230, 0.25);
+		overflow: hidden;
+
+		& iframe {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	// .location__info
@@ -166,10 +203,16 @@
 
 	// .location__title
 	&__title {
+		margin-bottom: toRem(8);
 	}
 
 	// .location__address
 	&__address {
+		font-style: normal;
+
+		@media (max-width: $tablet) {
+			font-weight: 400;
+		}
 	}
 }
 

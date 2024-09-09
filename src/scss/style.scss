@@ -419,5 +419,7 @@ body {
 
 	// .page-contacts__location
 	&__location {
+		@include adaptiveValue("padding-top", 120, 80, 0, 991, 500);
+		margin-bottom: toRem(97);
 	}
 }
