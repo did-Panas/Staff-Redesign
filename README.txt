@@ -1,13 +1,13 @@
-Сподіваюсь, "Чертоги Фрілансера" допоможуть зекономити чимало часу
-і отримати задоволення від розробки :)
+Multi-page website. It was built using HTML, CSS (SCSS), Flex-Boxes, CSS-Grids and pure JS. It has been used BEM-methodology and semantic coding principles. Fully responsive and fully adaptive. Optimized for fast loading.
 
-Дякую за підтримку безкоштовного навчального контенту!
 
-//------------------------------------------------------------------------------
-
-Документація до шаблону: https://template.fls.guru/template-docs 
-
-//------------------------------------------------------------------------------
-
-Навчайся, розвивайся та пам'ятай - Живи, а працюй у вільний час!
-Жека Андріканич (Фрілансер по життю)
+Figma
+HTML5
+SCSS
+CSS 3
+Flexbox
+CSS Grid
+CSS Animation
+gulp
+JavaScript
+BEM
